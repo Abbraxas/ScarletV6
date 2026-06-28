@@ -128,6 +128,7 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     title_x = 500
     title_y = 120
     
+    # Title shadow effect (multiple layers for depth)
     for i in range(5, 0, -1):
         draw.text(
             (title_x + i, title_y + i),
@@ -136,23 +137,24 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
             font=font_title
         )
     
+    # Main title - Perfect purple/lavender color
     draw.text(
         (title_x, title_y),
         title_text,
-        fill=(205, 75, 255),
+        fill=(210, 100, 255),
         font=font_title
     )
     
-    # Channel
+    # Channel name - Pure white for maximum contrast
     subtitle_y = 200
-    draw.text((title_x, subtitle_y), channel, fill=(225, 220, 235), font=font_subtitle)
+    draw.text((title_x, subtitle_y), channel, fill=(255, 255, 255), font=font_subtitle)
     
-    # Pipe + Views
+    # Pipe + Views - Pure white
     channel_width = draw.textlength(channel, font=font_subtitle)
-    draw.text((title_x + channel_width + 12, subtitle_y), "|", fill=(245,245,245), font=font_subtitle)
-    draw.text((title_x + channel_width + 32, subtitle_y), views, fill=(245,245,245), font=font_subtitle)
+    draw.text((title_x + channel_width + 12, subtitle_y), "|", fill=(255, 255, 255), font=font_subtitle)
+    draw.text((title_x + channel_width + 32, subtitle_y), views, fill=(255, 255, 255), font=font_subtitle)
     
-    # ============ REQUESTED BY + DEV (NEW SECTION) ============
+    # ============ REQUESTED BY + DEV (PERFECT COLORS) ============
     requested_y = 250  # Channel/views ke niche
     
     # Clean user name (purane wale logic se - unidecode)
@@ -171,26 +173,29 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     if clean_name.lower() in ["autoplay", "auto", "autobot"]:
         clean_name = "Autoplay"
     
-    # Accent color (lime green - title ka same color)
-    accent = (245, 245, 245)
+    # Perfect colors matching the image
+    purple_accent = (185, 50, 255)  # Bright purple for labels
+    white_text = (255, 255, 255)    # Pure white for names
     
-    # "Requested By | " - gray color
+    # "Requested By:- " - Purple accent color
     prefix_text = "Requested By:- "
     draw.text((title_x, requested_y), prefix_text, 
-              fill=(180,40,255), font=font_requested)
+              fill=purple_accent, font=font_requested)
     
-    # User name - accent color
+    # User name - Pure white
     prefix_width = draw.textlength(prefix_text, font=font_requested)
     draw.text((title_x + prefix_width, requested_y), clean_name, 
-              fill=accent, font=font_requested)
+              fill=white_text, font=font_requested)
     
-    # Pipe + Dev credit
+    # Pipe - Purple for separation
     name_width = draw.textlength(clean_name, font=font_requested)
     dev_start_x = title_x + prefix_width + name_width + 15
-    draw.text((dev_start_x, requested_y), "|", fill=(255,255,255), font=font_requested)
+    draw.text((dev_start_x, requested_y), "|", fill=purple_accent, font=font_requested)
     
+    # "Dev:- CreativeAxiom" - Purple for Dev label
     dev_text = " Dev:- CreativeAxiom"
-    draw.text((dev_start_x + 15, requested_y), dev_text, fill=(180,40,255), font=font_requested)
+    draw.text((dev_start_x + 15, requested_y), dev_text, 
+              fill=purple_accent, font=font_requested)
     # ==========================================================
     
     # Calculate current time
@@ -208,12 +213,12 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     # Time position
     time_y = 520
     
-    # Current time - LEFT
-    draw.text((135, time_y), current_time, fill=(180,40,255), font=font_time)
+    # Current time - LEFT (Purple accent)
+    draw.text((135, time_y), current_time, fill=purple_accent, font=font_time)
     
-    # Duration - RIGHT
+    # Duration - RIGHT (Purple accent)
     dur_width = draw.textlength(duration, font=font_time)
-    draw.text((1480 - dur_width, time_y), duration, fill=(180,40,255), font=font_time)
+    draw.text((1480 - dur_width, time_y), duration, fill=purple_accent, font=font_time)
     
     # Save
     final = template.convert("RGB")
