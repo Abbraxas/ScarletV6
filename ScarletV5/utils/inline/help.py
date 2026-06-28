@@ -7,7 +7,7 @@ from pyrogram.enums import ButtonStyle
 
 def help_pannel(_, START: Union[bool, int] = None):
     first = [
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DABGER)]
+        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER)]
     ]
 
     second = [
