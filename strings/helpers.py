@@ -170,7 +170,7 @@ CLONE_HELP = """
 CLONE_HELP_2 = """
 <blockquote><b><u>ᴄᴏᴍᴍᴀɴᴅs :</b></u>
 
-<b>/clone</b> – ᴄʟᴏɴᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ ғʀᴏᴍ [<a href="https://t.me/CLONNE_MUSIC_BOT">˹ 𝐍ᴏʙɪᴛᴀ ꭙ 𝐌ᴜsɪᴄ ˼</a>]
+<b>/clone</b> – ᴄʟᴏɴᴇ ʏᴏᴜʀ ᴏᴡɴ ʙᴏᴛ ғʀᴏᴍ [<a href="https://t.me/ScarletCloneBot">𝛅ᴄᴧꝛʟєᴛ 𝐂‌ʟσηєꝛ ㋡</a>]
 <b>/botinfo</b> – ᴏɴʟʏ ғᴏʀ ʙᴏᴛ ᴏᴡɴᴇʀs ᴛᴏ ᴠɪᴇᴡ ʙᴏᴛ ɪɴғᴏ.
 
 <b>/setchannel</b> – ᴀᴅᴅ ʏᴏᴜʀ ᴏᴡɴ ᴄʜᴀɴɴᴇʟ ᴛᴏ ʏᴏᴜʀ ʙᴏᴛ.
