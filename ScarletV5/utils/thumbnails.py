@@ -73,8 +73,8 @@ async def get_thumb(videoid):
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("ScarletV5/assets/font2.ttf", 30)
         font = ImageFont.truetype("ScarletV5/assets/font.ttf", 30)
-        text_size = draw.textsize("TEAM NOBITA BOTS    ", font=font)
-        draw.text((1280 - text_size[0] - 10, 10), "Scarlet | AxiomBots    ", fill="purple", font=font)
+        text_size = draw.textsize("Scarlet | AxiomBots   ", font=font)
+        draw.text((1280 - text_size[0] - 10, 10), "Scarlet | AxiomBots", fill="purple", font=font)
         draw.text(
             (55, 560),
             f"{channel} | {views[:23]}",
