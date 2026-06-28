@@ -139,12 +139,12 @@ async def start_pm(client, message: Message, _):
     # SENDING WITH SPOILER
     if start_video:
         try:
-            return await message.reply_video(start_video, caption=caption, reply_markup=markup, message_effect_id=effect, has_spoiler=True)
+            return await message.reply_video(start_video, caption=caption, reply_markup=markup, has_spoiler=True)
         except:
             pass
     
     photo = start_img if start_img else random.choice(STREAMI_PICS)
-    await message.reply_photo(photo, caption=caption, reply_markup=markup, message_effect_id=effect, has_spoiler=True)
+    await message.reply_photo(photo, caption=caption, reply_markup=markup, has_spoiler=True)
 
 # =====================================================================
 # GROUP START
