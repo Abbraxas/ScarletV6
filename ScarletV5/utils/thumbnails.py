@@ -154,10 +154,10 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     draw.text((title_x + channel_width + 12, subtitle_y), "|", fill=(255, 255, 255), font=font_subtitle)
     draw.text((title_x + channel_width + 32, subtitle_y), views, fill=(255, 255, 255), font=font_subtitle)
     
-    # ============ REQUESTED BY + DEV (PERFECT COLORS) ============
-    requested_y = 250  # Channel/views ke niche
+    # ============ REQUESTED BY + DEV (VISIBLE COLORS) ============
+    requested_y = 250
     
-    # Clean user name (purane wale logic se - unidecode)
+    # Clean user name
     try:
         from unidecode import unidecode
         clean_name = re.sub(r'<[^>]+>', '', str(user_name))
@@ -165,38 +165,41 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     except:
         clean_name = re.sub(r'<[^>]+>', '', str(user_name)).strip()
     
-    # Empty check
     if not clean_name:
         clean_name = "AxiomUser"
     
-    # Autoplay check
     if clean_name.lower() in ["autoplay", "auto", "autobot"]:
         clean_name = "Autoplay"
     
-    # Perfect colors matching the image
-    purple_accent = (185, 50, 255)  # Bright purple for labels
-    white_text = (255, 255, 255)    # Pure white for names
+    # Option 1: White + Gold (Best visibility)
+    requested_color = (255, 255, 255)        # White
+    accent_color = (255, 215, 0)             # Gold
+    dev_color = (255, 255, 255)              # White
     
-    # "Requested By:- " - Purple accent color
+    # Option 2: Cyan + Pink (Neon style)
+    # requested_color = (100, 255, 218)       # Cyan
+    # accent_color = (255, 105, 180)          # Pink  
+    # dev_color = (100, 255, 218)             # Cyan
+    
+    # "Requested By:- " - White/Cyan
     prefix_text = "Requested By:- "
     draw.text((title_x, requested_y), prefix_text, 
-              fill=purple_accent, font=font_requested)
+              fill=requested_color, font=font_requested)
     
-    # User name - Pure white
+    # User name - White/Cyan
     prefix_width = draw.textlength(prefix_text, font=font_requested)
     draw.text((title_x + prefix_width, requested_y), clean_name, 
-              fill=white_text, font=font_requested)
+              fill=requested_color, font=font_requested)
     
-    # Pipe - Purple for separation
+    # Pipe - Gold/Pink (separator)
     name_width = draw.textlength(clean_name, font=font_requested)
     dev_start_x = title_x + prefix_width + name_width + 15
-    draw.text((dev_start_x, requested_y), "|", fill=purple_accent, font=font_requested)
+    draw.text((dev_start_x, requested_y), "|", fill=accent_color, font=font_requested)
     
-    # "Dev:- CreativeAxiom" - Purple for Dev label
+    # "Dev:- CreativeAxiom" - White/Cyan
     dev_text = " Dev:- CreativeAxiom"
     draw.text((dev_start_x + 15, requested_y), dev_text, 
-              fill=purple_accent, font=font_requested)
-    # ==========================================================
+              fill=dev_color, font=font_requested)
     
     # Calculate current time
     try:
