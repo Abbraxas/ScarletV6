@@ -107,8 +107,7 @@ async def start_pm(client, message: Message, _):
         out = private_panel(_)
         # This part requires Pyrofork >= 2.2.20
         await message.reply_photo(
-            random.choice(STREAMI_PICS),
-            message_effect_id=random.choice(EFFECT_ID),  # Effect ID line enabled
+            random.choice(STREAMI_PICS),  # Effect ID line enabled
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
