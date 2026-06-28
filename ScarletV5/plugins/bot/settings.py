@@ -98,6 +98,16 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
 # 🚀 MODIFIED: Axiom_Clone (Replaced user_id with callback_data)
 # ---------------------------------------------------
 
+######################################################
+from pyrogram import filters
+
+@app.on_message(filters.private & filters.video)
+async def get_file_id(client, message):
+    await message.reply_text(
+        f"FILE_ID:\n\n<code>{message.video.file_id}</code>"
+    )
+
+##################################################
 @app.on_callback_query(filters.regex("Axiom_Clone") & ~BANNED_USERS)
 @languageCB
 async def gib_repo(client, CallbackQuery, _):
