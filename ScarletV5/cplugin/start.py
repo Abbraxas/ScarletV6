@@ -3,7 +3,7 @@ import random
 import asyncio
 import logging
 from pyrogram import filters, Client
-from pyrogram.enums import ChatType
+from pyrogram.enums import ChatType, ButtonStyle
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from pyrogram.errors import MessageNotModified
 from py_yt import VideosSearch
@@ -93,7 +93,7 @@ async def start_pm(client, message: Message, _):
     if len(message.text.split()) > 1:
         arg = message.text.split(None, 1)[1]
         if arg.startswith("help"):
-            keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT)]])
+            keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY)]])
             return await message.reply_photo(random.choice(STREAMI_PICS), caption=_["help_1"].format(C_SUPPORT_CHAT), reply_markup=keyboard, has_spoiler=True)
         if arg.startswith("sud"):
             return await sudoers_list(client=client, message=message, _=_)
@@ -105,7 +105,7 @@ async def start_pm(client, message: Message, _):
                 result = results["result"][0]
                 thumbnail = result["thumbnails"][0]["url"].split("?")[0]
                 caption = _["start_6"].format(result["title"], result["duration"], result["viewCount"]["short"], result["publishedTime"], result["channel"]["link"], result["channel"]["name"], a.mention)
-                key = InlineKeyboardMarkup([[InlineKeyboardButton(_["S_B_8"], url=result["link"]), InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT)]])
+                key = InlineKeyboardMarkup([[InlineKeyboardButton(_["S_B_8"], url=result["link"], style=ButtonStyle.PRIMARY), InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY)]])
                 await m.delete()
                 return await message.reply_photo(thumbnail, caption=caption, reply_markup=key, has_spoiler=True)
             except Exception as e:
@@ -114,10 +114,10 @@ async def start_pm(client, message: Message, _):
 
     # 3. MAIN START UI
     out = [
-        [InlineKeyboardButton(_["S_B_3"], url=f"https://t.me/{a.username}?startgroup=true")],
-        [InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT), InlineKeyboardButton(_["S_B_6"], url=C_SUPPORT_CHANNEL)],
-        [InlineKeyboardButton(_["C_B_2"], url=OWNER_URL)], 
-        [InlineKeyboardButton(_["S_B_4"], callback_data="Axiom_Help")]
+        [InlineKeyboardButton(_["S_B_3"], url=f"https://t.me/{a.username}?startgroup=true"), style=ButtonStyle.PRIMARY],
+        [InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY), InlineKeyboardButton(_["S_B_6"], url=C_SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY)],
+        [InlineKeyboardButton(_["C_B_2"], url=OWNER_ID, style=ButtonStyle.SUCCESS)], 
+        [InlineKeyboardButton(_["S_B_4"], callback_data="Axiom_Help", style=ButtonStyle.DANGER)]
     ]
 
     start_video = get_start_video(bot_id)
@@ -131,7 +131,7 @@ async def start_pm(client, message: Message, _):
     )
 
     if custom_button and custom_button.get("text"):
-        out.insert(0, [InlineKeyboardButton(custom_button["text"], url=custom_button["url"])])
+        out.insert(0, [InlineKeyboardButton(custom_button["text"], url=custom_button["url"], style=ButtonStyle.PRIMARY)])
 
     effect = random.choice(EFFECT_ID)
     markup = InlineKeyboardMarkup(out)
@@ -158,8 +158,8 @@ async def start_gp(client, message: Message, _):
     C_SUPPORT_CHAT_USER = await get_cloned_support_chat(a.id)
     C_SUPPORT_CHAT = f"https://t.me/{C_SUPPORT_CHAT_USER}"
 
-    out = [[InlineKeyboardButton(_["S_B_1"], url=f"https://t.me/{a.username}?startgroup=true"),
-            InlineKeyboardButton(_["S_B_2"], url=C_SUPPORT_CHAT)]]
+    out = [[InlineKeyboardButton(_["S_B_1"], url=f"https://t.me/{a.username}?startgroup=true", style=ButtonStyle.PRIMARY),
+            InlineKeyboardButton(_["S_B_2"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY)]]
     
     caption = _["start_1"].format(a.mention, uptime)
     start_video = get_start_video(a.id)
