@@ -42,11 +42,11 @@ def private_panel(_):
         ],
         [
             InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID, style=ButtonStyle.PRIMARY),
-            InlineKeyboardButton(text=_["S_B_11"], url=config.SUPPORT_CHANNEL, style=random_style()),
+            InlineKeyboardButton(text=_["S_B_12"], callback_data="Axiom_Clone", style=random_style()),
         ],
         [
             InlineKeyboardButton(text=_["S_B_10"], callback_data="Axiom_About", style=random_style()),
-            InlineKeyboardButton(text=_["S_B_12"], callback_data="Axiom_Clone", style=random_style()),
+            InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL, style=random_style()),
         ]
     ]
     return buttons
