@@ -116,7 +116,7 @@ async def start_pm(client, message: Message, _):
     out = [
         [InlineKeyboardButton(_["S_B_3"], url=f"https://t.me/{a.username}?startgroup=true", style=ButtonStyle.PRIMARY)],
         [InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY), InlineKeyboardButton(_["S_B_6"], url=C_SUPPORT_CHANNEL, style=ButtonStyle.PRIMARY)],
-        [InlineKeyboardButton(_["C_B_2"], user_id=config.OWNER_ID, style=ButtonStyle.SUCCESS)], 
+        [InlineKeyboardButton(_["C_B_2"], url=OWNER_URL, style=ButtonStyle.SUCCESS)], 
         [InlineKeyboardButton(_["S_B_4"], callback_data="Axiom_Help", style=ButtonStyle.DANGER)]
     ]
 
