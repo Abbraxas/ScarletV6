@@ -108,7 +108,7 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
             print(f"[ERROR] Album art: {e}")
     
     # Album art position
-    template.paste(album_img, (140, 129), album_img)
+    template.paste(album_img, (139, 129), album_img)
     
     # Fonts
     font_title = _get_font(FONT_TITLE, 60)
