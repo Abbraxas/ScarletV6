@@ -174,7 +174,7 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
         clean_name = "Autoplay"
     
     # Perfect colors matching the image
-    purple_accent = (0, 255, 255)  
+    purple_accent = (220, 180, 255)  
     white_text = (255, 255, 255)    # Pure white for names
     
     # "Requested By:- " - Purple accent color
