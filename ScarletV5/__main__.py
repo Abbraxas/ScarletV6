@@ -32,14 +32,14 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("ScarletV5.plugins" + all_module)
-    LOGGER("ScarletV5.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...")
+    LOGGER("ScarletV5.plugins").info("Successfully imported every features...")
     await userbot.start()
     await Axiom.start()
     try:
         await Axiom.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("ScarletV5").error(
-            "𝗣𝗹𝗭 𝗦𝗧𝗔𝗥𝗧 𝗬𝗢𝗨𝗥 𝗟𝗢𝗚 𝗚𝗥𝗢𝗨𝗣 𝗩𝗢𝗜𝗖𝗘𝗖𝗛𝗔𝗧\𝗖𝗛𝗔𝗡𝗡𝗘𝗟\n\n𝗠𝗨𝗦𝗜𝗖 𝗕𝗢𝗧 𝗦𝗧𝗢𝗣........"
+            "Please check the vc of logger gc is started or not?"
         )
         exit()
     except:
@@ -47,12 +47,12 @@ async def init():
     await Axiom.decorators()
     await restart_bots()
     LOGGER("ScarletV5").info(
-        "╔═════ஜ۩۞۩ஜ════╗\n  ☠︎︎𝗠𝗔𝗗𝗘 𝗕𝗬 𝗣𝗿𝗼𝗕𝗼t𝘀☠︎︎\n╚═════ஜ۩۞۩ஜ════╝"
+        "Axiom Clone Music Bot Successfully started......"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("ScarletV5").info("𝗦𝗧𝗢𝗣 𝗠𝗨𝗦𝗜𝗖🎻 𝗕𝗢𝗧..")
+    LOGGER("ScarletV5").info("Stopping Axiom Clone Music Bot.....")
 
 
 if __name__ == "__main__":
