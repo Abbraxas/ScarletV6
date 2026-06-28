@@ -102,13 +102,13 @@ async def gib_repo(client, CallbackQuery, _):
         media=InputMediaVideo(
             media="BAACAgUAAxkBAAOUakDtpfxlzkFab1Gz4hzwt5XUWYsAAr4iAALQqAlWYpS8FHEKNjseBA",
             has_spoiler=True,
-            caption="**ᴍᴀᴋᴇ ʏᴏᴜʀ ᴏᴡɴ ᴍᴜsɪᴄ ʙᴏᴛ ᴡᴀᴛᴄʜɪɴɢ ᴛʜᴇ ᴠɪᴅᴇᴏ ᴄᴀʀᴇғᴜʟʟʏ.**"
+            caption="**ϻᴧᴋє ʏᴏᴜꝛ ᴏᴡη ϻᴜsιᴄ ʙᴏᴛ ᴡᴧᴛᴄʜιηɢ ᴛʜє ᴠιᴅєᴏ ᴄᴧꝛєғᴜʟʟʏ.**"
         ),
         reply_markup=InlineKeyboardMarkup(
             [
                 # 📢 CHANGE HERE: user_id is replaced by callback_data
-                [InlineKeyboardButton(text="ᴏᴡɴ ᴄʀᴇᴀᴛᴇ ʙᴏᴛ", callback_data="the_maanav_help")],
-                [InlineKeyboardButton(text="⌯ ʙᴀᴄᴋ ⌯", callback_data="Axiom_Back")]
+                [InlineKeyboardButton(text="ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ʙᴏᴛ", callback_data="the_maanav_help")],
+                [InlineKeyboardButton(text="𝐁‌ᴧᴄᴋ ⟲", callback_data="Axiom_Back")]
             ]
         )
     )
@@ -130,7 +130,7 @@ async def the_maanav_help_callback(client, CallbackQuery, _):
         [
             [
                 InlineKeyboardButton(
-                    text="ʙᴀᴄᴋ", 
+                    text="𝐁‌ᴧᴄᴋ ⟲", 
                     callback_data="Axiom_Clone" # Clicking this will call gib_repo again
                 )
             ]
