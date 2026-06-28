@@ -12,7 +12,7 @@ from .utils import StartTime
 from ScarletV5.utils import get_readable_time
 from ScarletV5.utils.decorators.language import language
 
-APP_LINK = f"https://t.me/CLONNE_MUSIC_BOT"
+APP_LINK = f"https://t.me/ScarletCloneBot"
 
 
 @Client.on_message(filters.command("clone"))
