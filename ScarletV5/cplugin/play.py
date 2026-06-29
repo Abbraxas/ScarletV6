@@ -36,6 +36,7 @@ from ScarletV5.cplugin.setinfo import get_logging_status, get_log_channel
 from config import BANNED_USERS, lyrical
 from time import time
 from ScarletV5.utils.extraction import extract_user
+from ScarletV5.utils.thumbnails import get_thumb
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -1257,14 +1258,3 @@ async def stream(
             db[chat_id][0]["markup"] = "tg"
             await mystic.delete()
 
-
-async def get_thumb(videoid):
-    try:
-        # Search for the video using video ID
-        query = f"https://www.youtube.com/watch?v={videoid}"
-        results = VideosSearch(query, limit=1)
-        for result in (await results.next())["result"]:
-            thumbnail = result["thumbnails"][0]["url"].split("?")[0]
-        return thumbnail
-    except Exception as e:
-        return config.YOUTUBE_IMG_URL
