@@ -110,7 +110,7 @@ async def start_pm(client, message: Message, _):
                 return await app.send_message(
                     chat_id=config.LOGGER_ID,
                     text=f"<blockquote><b><u>✧ ηєᴡ υsєʀ sᴛᴧʀᴛєᴅ ᴛʜє ᴧxισϻ ᴄʟσηє ϻυsιᴄ ʙσᴛ ᴛσ ᴄʜєᴄᴋ ᴛʀᴧᴄᴋ ɪηғσ.</u></b></blockquote>\n\n"
-                         f"<blockquote><b>✧ ηᴧϻє:- {message.from_user.mention}\n"
+                         f"<blockquote><b>✧ ηᴧϻє:-</b> {message.from_user.mention}\n"
                          f"<b>✧ υsєʀηᴧϻє:-</b> @{message.from_user.username}\n"
                          f"<b>✧ υɪᴅ:-</b> <code>{message.from_user.id}</code>.</blockquote>",
                 )
@@ -126,7 +126,7 @@ async def start_pm(client, message: Message, _):
             return await app.send_message(
                 chat_id=config.LOGGER_ID,
                 text=f"<blockquote><b><u>❖ ηєᴡ υsєʀ sᴛᴧʀᴛєᴅ ᴛʜє ᴧxισϻ ᴄʟσηє ϻυsιᴄ ʙσᴛ.</u></b></blockquote>\n\n"
-                    f"<blockquote><b>✧ ηᴧϻє:-<b> {message.from_user.mention}\n"
+                    f"<blockquote><b>✧ ηᴧϻє:-</b> {message.from_user.mention}\n"
                     f"<b>✧ υsєʀηᴧϻє:-</b> @{message.from_user.username}\n"
                     f"<b>✧ υɪᴅ:-</b> <code>{message.from_user.id}</code></blockquote>",
             )
