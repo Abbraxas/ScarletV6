@@ -28,7 +28,7 @@ class Axiom(Client):
         try:
             await self.send_message(
                 chat_id=config.LOGGER_ID,
-                text=f"<u><b>» {self.mention} ʙᴏᴛ sᴛᴀʀᴛᴇᴅ :</b><u>\n\nɪᴅ : <code>{self.id}</code>\nɴᴀᴍᴇ : {self.name}\nᴜsᴇʀɴᴀᴍᴇ : @{self.username}",
+                text=f"<blockquote><b><u>✧ ᴛʜє ᴧxισϻ ᴄʟσηє ϻυsιᴄ ʙσᴛ sᴛᴧʀᴛєᴅ sυᴄᴄєssғυʟʟʏ.</u></b></blockquote><u>\n\n<blockquote expandable><b>✧ ηᴧϻє : {self.mention}\n✧ υsєʀηᴧϻє : @{self.username}\n✧ ɪᴅ : <code>{self.id}</code></b></blockquote>",
             )
         except (errors.ChannelInvalid, errors.PeerIdInvalid):
             LOGGER(__name__).error(
