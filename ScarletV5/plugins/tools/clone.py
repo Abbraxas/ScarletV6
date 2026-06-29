@@ -31,16 +31,21 @@ CLONES = set()
 C_BOT_DESC = "Wᴀɴᴛ ᴀ ʙᴏᴛ ʟɪᴋᴇ ᴛʜɪs? Cʟᴏɴᴇ ɪᴛ ɴᴏᴡ! ✅\n\nVɪsɪᴛ: @ScarletCloneBot ᴛᴏ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ!\n\n - Uᴘᴅᴀᴛᴇ: @AxiomBots\n - Oᴡɴᴇʀ: @CreativeAxiom"
 
 C_BOT_COMMANDS = [
-                {"command": "/start", "description": "sᴛᴀʀᴛs ᴛʜᴇ ᴍᴜsɪᴄ ʙᴏᴛ"},
-                {"command": "/help", "description": "ɢᴇᴛ ʜᴇʟᴩ ᴍᴇɴᴜ ᴡɪᴛʜ ᴇxᴩʟᴀɴᴀᴛɪᴏɴ ᴏғ ᴄᴏᴍᴍᴀɴᴅs."},
-                {"command": "/play", "description": "sᴛᴀʀᴛs sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ ᴛʀᴀᴄᴋ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ."},
-                {"command": "/pause", "description": "ᴩᴀᴜsᴇ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ."},
-                {"command": "/resume", "description": "ʀᴇsᴜᴍᴇ ᴛʜᴇ ᴩᴀᴜsᴇᴅ sᴛʀᴇᴀᴍ."},
-                {"command": "/skip", "description": "ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ ᴀɴᴅ sᴛᴀʀᴛ sᴛʀᴇᴀᴍɪɴɢ ᴛʜᴇ ɴᴇxᴛ ᴛʀᴀᴄᴋ ɪɴ ǫᴜᴇᴜᴇ."},
-                {"command": "/end", "description": "ᴄʟᴇᴀʀs ᴛʜᴇ ǫᴜᴇᴜᴇ ᴀɴᴅ ᴇɴᴅ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ᴩʟᴀʏɪɴɢ sᴛʀᴇᴀᴍ."},
-                {"command": "/ping", "description": "ᴛʜᴇ ᴩɪɴɢ ᴀɴᴅ sʏsᴛᴇᴍ sᴛᴀᴛs ᴏғ ᴛʜᴇ ʙᴏᴛ."},
-                {"command": "/id", "description": "ɢᴇᴛ ᴛʜᴇ ᴄᴜʀʀᴇɴᴛ ɢʀᴏᴜᴘ ɪᴅ. ɪғ ᴜsᴇᴅ ʙʏ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ɢᴇᴛs ᴛʜᴀᴛ ᴜsᴇʀ's ɪᴅ."}
-
+                {"command": "/start", "description": "𝐈‌ηɪᴛɪᴧᴛєs 𝐓‌ʜє 𝐌‌υsɪᴄ 𝐁‌σᴛ."},
+                {"command": "/help", "description": "𝐀‌ᴄᴄєss 𝐓‌ʜє 𝐇‌єʟᴘ 𝐇‌υʙ 𝐖‌ɪᴛʜ 𝐂‌σϻᴘʟєᴛє 𝐂‌σϻϻᴧηᴅ 𝐄‌xᴘʟᴧηᴧᴛɪσηs."},
+                {"command": "/clone", "description": "𝐅‌σꝛɢєs 𝐀‌ 𝐏‌єꝛsσηᴧʟɪᴢєᴅ 𝐂‌ʟσηє 𝐎‌ғ 𝐓‌ʜє 𝐌‌υsɪᴄ 𝐁‌σᴛ."},
+                {"command": "/play", "description": "𝐋‌ᴧυηᴄʜєs 𝐓‌ʜє 𝐑‌єǫυєsᴛєᴅ 𝐓‌ꝛᴧᴄᴋ 𝐈‌η 𝐕‌σɪᴄє 𝐂‌ʜᴧᴛ."},
+                {"command": "/vplay", "description": "𝐋‌ᴧυηᴄʜєs 𝐓‌ʜє 𝐑‌єǫυєsᴛєᴅ 𝐕‌ɪᴅєσ 𝐈‌η 𝐕‌σɪᴄє 𝐂‌ʜᴧᴛ."},
+                {"command": "/cplay", "description": "𝐈‌ηɪᴛɪᴧᴛєs 𝐀‌υᴅɪσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐎‌η 𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ."},
+                {"command": "/cvplay", "description": "𝐈‌ηɪᴛɪᴧᴛєs 𝐕‌ɪᴅєσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐎‌η 𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ."},
+                {"command": "/cplayforce", "description": "𝐅‌σꝛᴄєs 𝐀‌υᴅɪσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐁‌ʏ 𝐁‌ʏᴘᴧssɪηɢ 𝐓‌ʜє 𝐐‌υєυє."},
+                {"command": "/cvplayforce", "description": "𝐅‌σꝛᴄєs 𝐕‌ɪᴅєσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐁‌ʏ 𝐁‌ʏᴘᴧssɪηɢ 𝐓‌ʜє 𝐐‌υєυє."}
+                {"command": "/pause", "description": "𝐇‌ᴧʟᴛs 𝐓‌ʜє 𝐂‌υꝛꝛєηᴛʟʏ 𝐒‌ᴛꝛєᴧϻɪηɢ 𝐓‌ꝛᴧᴄᴋ."},
+                {"command": "/resume", "description": "𝐑‌єᴧᴄᴛɪᴠᴧᴛєs 𝐓‌ʜє 𝐏‌ᴧυsєᴅ 𝐒‌ᴛꝛєᴧϻ."},
+                {"command": "/skip", "description": "𝐎‌ϻɪᴛs 𝐓‌ʜє 𝐂‌υꝛꝛєηᴛ 𝐓‌ꝛᴧᴄᴋ 𝐀‌ηᴅ 𝐀‌ᴅᴠᴧηᴄєs 𝐓‌σ 𝐓‌ʜє 𝐍‌єxᴛ 𝐎‌ηє."},
+                {"command": "/end", "description": "𝐓‌єꝛϻɪηᴧᴛєs 𝐓‌ʜє 𝐒‌ᴛꝛєᴧϻ 𝐀‌ηᴅ 𝐏‌υꝛɢєs 𝐓‌ʜє 𝐐‌υєυє."},
+                {"command": "/ping", "description": "𝐃‌ɪsᴘʟᴧʏs 𝐁‌σᴛ 𝐋‌ᴧᴛєηᴄʏ 𝐀‌ηᴅ 𝐒‌ʏsᴛєϻ 𝐌‌єᴛꝛɪᴄs."},
+                {"command": "/id", "description": "𝐑‌єᴠєᴧʟs 𝐓‌ʜє 𝐂‌υꝛꝛєηᴛ 𝐂‌ʜᴧᴛ 𝐎‌ꝛ 𝐔‌sєꝛ 𝐈‌ᴅєηᴛɪғɪєꝛ."},
             ]
 
 
