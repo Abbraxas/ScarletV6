@@ -237,11 +237,11 @@ async def restart_bots():
         await app.send_message(
                 CLONE_LOGGER,
                 """
-            <b><blockquote>❖ ᴄʟσηєᴅ ʙσᴛ ʀєsᴛᴧʀᴛ ᴄσϻᴘʟєᴛєᴅ</blockquote></b>
-            <blockquote><b>✦ sᴛᴧᴛυs : ᴧᴄᴛɪᴠє ʙσᴛs sᴛᴧʀᴛєᴅ</b>
-                        <b>✦ ғʟσσᴅᴡᴧɪᴛ : ᴘєηᴅɪηɢ ʙσᴛs ᴡɪʟʟ ᴧυᴛσ-sᴛᴧʀᴛ</b>
-                        <b>✦ ϻσᴅє : ʙᴧᴄᴋɢʀσυηᴅ ʀєᴄσᴠєʀʏ єηᴧʙʟєᴅ</b></blockquote>
-            <b><blockquote>❖ ᴧʟʟ ᴄʟσηєs ᴘʀσᴄєssєᴅ sυᴄᴄєssғυʟʟʏ</blockquote></b>
+            <b><blockquote><u>❖ ᴄʟσηєᴅ ʙσᴛ ʀєsᴛᴧʀᴛ ᴄσϻᴘʟєᴛєᴅ</u></blockquote></b>
+            <blockquote><b>✦ <u>sᴛᴧᴛυs</u> : ᴧᴄᴛɪᴠє ʙσᴛs sᴛᴧʀᴛєᴅ</b>
+                        <b>✦ <u>ғʟσσᴅᴡᴧɪᴛ</u> : ᴘєηᴅɪηɢ ʙσᴛs ᴡɪʟʟ ᴧυᴛσ-sᴛᴧʀᴛ</b>
+                        <b>✦ <u>ϻσᴅє</u> : ʙᴧᴄᴋɢʀσυηᴅ ʀєᴄσᴠєʀʏ єηᴧʙʟєᴅ</b></blockquote>
+            <b><blockquote><u>❖ ᴧʟʟ ᴄʟσηєs ᴘʀσᴄєssєᴅ sυᴄᴄєssғυʟʟʏ.</u></blockquote></b>
             """
             )
     except Exception as e:
