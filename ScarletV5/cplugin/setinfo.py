@@ -13,7 +13,7 @@ from ScarletV5.utils.database import clonebotdb
 
 
 #set clone bot support channel
-@Client.on_message(filters.command("setchannel"))
+@Client.on_message(filters.command("setsupport"))
 @language
 async def set_channel(client: Client, message: Message, _):
 
@@ -44,7 +44,7 @@ async def set_channel(client: Client, message: Message, _):
 
 
 #set clone bot support chat
-@Client.on_message(filters.command("setsupport"))
+@Client.on_message(filters.command("setchannel"))
 @language
 async def set_support(client: Client, message: Message, _):
 
