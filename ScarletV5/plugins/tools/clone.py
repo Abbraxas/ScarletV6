@@ -235,7 +235,14 @@ async def restart_bots():
             await asyncio.sleep(5)
 
         await app.send_message(
-                CLONE_LOGGER, f"All Cloned Bots Started !"
+                CLONE_LOGGER,
+                """
+            <b><blockquote>❖ ᴄʟσηє ʀєsᴛᴧʀᴛ ᴄσϻᴘʟєᴛєᴅ</blockquote></b>
+            <blockquote><b>✦ sᴛᴧᴛυs : ᴧᴄᴛɪᴠє ʙσᴛs sᴛᴧʀᴛєᴅ</b>
+            <b>✦ ғʟσσᴅᴡᴧɪᴛ : ᴘєηᴅɪηɢ ʙσᴛs ᴡɪʟʟ ᴧυᴛσ-sᴛᴧʀᴛ</b>
+            <b>✦ ϻσᴅє : ʙᴧᴄᴋɢʀσυηᴅ ʀєᴄσᴠєʀʏ єηᴧʙʟєᴅ</b></blockquote>
+            <b><blockquote>❖ ᴧʟʟ ᴄʟσηєs ᴘʀσᴄєssєᴅ sυᴄᴄєssғυʟʟʏ</blockquote></b>
+            """
             )
     except Exception as e:
         logging.exception("Error while restarting bots.")
