@@ -39,7 +39,7 @@ C_BOT_COMMANDS = [
                 {"command": "/cplay", "description": "𝐈‌ηɪᴛɪᴧᴛєs 𝐀‌υᴅɪσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐎‌η 𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ."},
                 {"command": "/cvplay", "description": "𝐈‌ηɪᴛɪᴧᴛєs 𝐕‌ɪᴅєσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐎‌η 𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ."},
                 {"command": "/cplayforce", "description": "𝐅‌σꝛᴄєs 𝐀‌υᴅɪσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐁‌ʏ 𝐁‌ʏᴘᴧssɪηɢ 𝐓‌ʜє 𝐐‌υєυє."},
-                {"command": "/cvplayforce", "description": "𝐅‌σꝛᴄєs 𝐕‌ɪᴅєσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐁‌ʏ 𝐁‌ʏᴘᴧssɪηɢ 𝐓‌ʜє 𝐐‌υєυє."}
+                {"command": "/cvplayforce", "description": "𝐅‌σꝛᴄєs 𝐕‌ɪᴅєσ 𝐏‌ʟᴧʏʙᴧᴄᴋ 𝐁‌ʏ 𝐁‌ʏᴘᴧssɪηɢ 𝐓‌ʜє 𝐐‌υєυє."},
                 {"command": "/pause", "description": "𝐇‌ᴧʟᴛs 𝐓‌ʜє 𝐂‌υꝛꝛєηᴛʟʏ 𝐒‌ᴛꝛєᴧϻɪηɢ 𝐓‌ꝛᴧᴄᴋ."},
                 {"command": "/resume", "description": "𝐑‌єᴧᴄᴛɪᴠᴧᴛєs 𝐓‌ʜє 𝐏‌ᴧυsєᴅ 𝐒‌ᴛꝛєᴧϻ."},
                 {"command": "/skip", "description": "𝐎‌ϻɪᴛs 𝐓‌ʜє 𝐂‌υꝛꝛєηᴛ 𝐓‌ꝛᴧᴄᴋ 𝐀‌ηᴅ 𝐀‌ᴅᴠᴧηᴄєs 𝐓‌σ 𝐓‌ʜє 𝐍‌єxᴛ 𝐎‌ηє."},
