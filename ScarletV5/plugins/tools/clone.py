@@ -237,10 +237,10 @@ async def restart_bots():
         await app.send_message(
                 CLONE_LOGGER,
                 """
-            <b><blockquote>❖ ᴄʟσηє ʀєsᴛᴧʀᴛ ᴄσϻᴘʟєᴛєᴅ</blockquote></b>
+            <b><blockquote>❖ ᴄʟσηєᴅ ʙσᴛ ʀєsᴛᴧʀᴛ ᴄσϻᴘʟєᴛєᴅ</blockquote></b>
             <blockquote><b>✦ sᴛᴧᴛυs : ᴧᴄᴛɪᴠє ʙσᴛs sᴛᴧʀᴛєᴅ</b>
-            <b>✦ ғʟσσᴅᴡᴧɪᴛ : ᴘєηᴅɪηɢ ʙσᴛs ᴡɪʟʟ ᴧυᴛσ-sᴛᴧʀᴛ</b>
-            <b>✦ ϻσᴅє : ʙᴧᴄᴋɢʀσυηᴅ ʀєᴄσᴠєʀʏ єηᴧʙʟєᴅ</b></blockquote>
+                        <b>✦ ғʟσσᴅᴡᴧɪᴛ : ᴘєηᴅɪηɢ ʙσᴛs ᴡɪʟʟ ᴧυᴛσ-sᴛᴧʀᴛ</b>
+                        <b>✦ ϻσᴅє : ʙᴧᴄᴋɢʀσυηᴅ ʀєᴄσᴠєʀʏ єηᴧʙʟєᴅ</b></blockquote>
             <b><blockquote>❖ ᴧʟʟ ᴄʟσηєs ᴘʀσᴄєssєᴅ sυᴄᴄєssғυʟʟʏ</blockquote></b>
             """
             )
