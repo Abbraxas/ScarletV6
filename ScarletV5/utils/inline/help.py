@@ -69,7 +69,7 @@ def private_help_panel(_):
             [
                 InlineKeyboardButton(
                     text=_["S_B_4"],
-                    url=f"https://t.me/{username}?start=help", 
+                    url=f"https://t.me/{app.username}?start=help", 
                     style=ButtonStyle.PRIMARY,
                 )
             ]
