@@ -2,7 +2,7 @@ import os
 import re
 import aiohttp
 import aiofiles
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont
 from functools import lru_cache
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -24,35 +24,6 @@ def _create_rounded_image(img, radius):
     result = Image.new("RGBA", img.size, (0, 0, 0, 0))
     result.paste(img, (0, 0), mask)
     return result
-
-def _add_soft_glow(img, glow_color=(90, 170, 90), num_layers=15, glow_radius=15, glow_strength=35):
-    """Add multiple soft glow layers around thumbnail - edges ko soft karega"""
-    # Create larger canvas for glow layers
-    expand_size = num_layers * 3
-    glow_size = (img.size[0] + expand_size * 2, img.size[1] + expand_size * 2)
-    glow_img = Image.new("RGBA", glow_size, (0, 0, 0, 0))
-    glow_draw = ImageDraw.Draw(glow_img)
-    
-    # Draw 15 layers of expanding rounded rectangles (soft fade effect)
-    for layer in range(num_layers, 0, -1):
-        opacity = int(glow_strength * (layer / num_layers))  # glow_strength use kiya
-        expand = layer * 2
-        
-        glow_draw.rounded_rectangle(
-            [expand, expand, glow_size[0] - expand, glow_size[1] - expand],
-            radius=35 + layer,  # 35 se 50 tak
-            fill=(*glow_color, opacity)
-        )
-    
-    # Heavy blur for ultra-soft glow (glow_radius use kiya)
-    glow_img = glow_img.filter(ImageFilter.GaussianBlur(glow_radius))
-    
-    # Paste original image in center
-    paste_x = expand_size // 2
-    paste_y = expand_size // 2
-    glow_img.paste(img, (paste_x, paste_y), img if img.mode == "RGBA" else None)
-    
-    return glow_img
 
 async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     output = f"cache/{videoid}.png"
@@ -111,15 +82,14 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
             album_img = Image.open(cache_file).resize((album_size, album_size), Image.LANCZOS).convert("RGBA")
             album_img = _create_rounded_image(album_img, 35)
             
-            # Add soft glow around edges (green color to match card)
-            album_img = _add_soft_glow(album_img, glow_color=(100, 180, 100), glow_radius=15, glow_strength=120)
+            # --- FIX: Glow wala pura code hata diya hai. Ab image same size rahegi ---
             
             if os.path.exists(cache_file):
                 os.remove(cache_file)
         except Exception as e:
             print(f"[ERROR] Album art: {e}")
     
-    # Album art position
+    # Album art position (Bilkul same 139, 129)
     template.paste(album_img, (139, 129), album_img)
     
     # Fonts
