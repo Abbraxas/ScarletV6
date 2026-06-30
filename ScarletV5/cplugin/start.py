@@ -93,8 +93,14 @@ async def start_pm(client, message: Message, _):
     if len(message.text.split()) > 1:
         arg = message.text.split(None, 1)[1]
         if arg.startswith("help"):
-            keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(_["S_B_9"], url=C_SUPPORT_CHAT, style=ButtonStyle.PRIMARY)]])
-            return await message.reply_photo(random.choice(STREAMI_PICS), caption=_["help_1"].format(C_SUPPORT_CHAT), reply_markup=keyboard, has_spoiler=True)
+            keyboard = first_page(_)
+        
+            return await message.reply_photo(
+                photo=HELP_IMG_URL,
+                caption=_["help_1"].format(C_SUPPORT_CHAT),
+                reply_markup=keyboard,
+                has_spoiler=True,
+            )
         if arg.startswith("sud"):
             return await sudoers_list(client=client, message=message, _=_)
         if arg.startswith("inf"):
