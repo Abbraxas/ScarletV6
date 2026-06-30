@@ -195,7 +195,19 @@ async def view_start_settings(client, message):
     vid = "✅ Set" if get_start_video(bot_id) else "❌ Not Set"
     cap = get_start_caption(bot_id) or "❌ Not Set"
     btn = get_start_button(bot_id) or {"text": "❌ Not Set", "url": "N/A"}
-    await message.reply_text(f"**📌 START SETTINGS**\n\n**Image:** `{img}`\n**Video:** `{vid}`\n**Caption:** `{cap[:50]}...` \n**Button:** `{btn['text']}`")
+    await message.reply_text(
+        f"""
+    <blockquote><b>✦ 𝐒‌ᴛᴧꝛᴛ 𝚺xᴘєꝛɪєηᴄє 𝐂‌σηғɪɢ</b></blockquote>
+    
+    <b>▸ 𝐁‌ᴧηηєꝛ :</b> {img}
+    <b>▸ 𝐈ηᴛꝛσ 𝐌‌єᴅɪᴧ :</b> {vid}
+    <b>▸ 𝐖‌єʟᴄσϻє 𝐌‌єssᴧɢє :</b>
+    <code>{cap[:50] if cap != "❌ Not Set" else cap}</code>
+    
+    <b>▸ 𝐏‌ꝛɪϻᴧꝛʏ 𝐁‌υᴛᴛση :</b>
+    <code>{btn['text']}</code>
+    """
+    )
 
 @Client.on_message(filters.command("resetstartsetting") & ~BANNED_USERS)
 async def reset_start_settings(client, message):
