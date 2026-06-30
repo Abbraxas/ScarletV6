@@ -179,12 +179,18 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.CLONE_HELP_3, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("dilXaditi") & ~BANNED_USERS)
+@Client.on_callback_query(filters.regex("help_(next|back)") & ~BANNED_USERS)
 @languageCB
-async def first_pagexx(client, CallbackQuery, _):
-    menu_next = second_page(_)
-    try:
-        await CallbackQuery.message.edit_text(_["help_1"], reply_markup=menu_next)
-        return
-    except:
-        return
+async def help_pages(client, CallbackQuery, _):
+    await CallbackQuery.answer()
+
+    if CallbackQuery.data == "help_next":
+        await CallbackQuery.edit_message_reply_markup(
+            reply_markup=second_page(_)
+        )
+
+    elif CallbackQuery.data == "help_back":
+        await CallbackQuery.edit_message_reply_markup(
+            reply_markup=first_page(_)
+        )
+        
