@@ -9,6 +9,8 @@ from pyrogram.errors import MessageNotModified
 from py_yt import VideosSearch
 
 import config
+from config import HELP_IMG_URL
+from ScarletV5.utils import first_page
 from ScarletV5 import app
 from ScarletV5.misc import _boot_
 from ScarletV5.plugins.sudo.sudoers import sudoers_list
