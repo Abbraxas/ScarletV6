@@ -1,6 +1,6 @@
 from typing import Union
 from pyrogram import filters, types
-from pyrogram.types import InlineKeyboardMarkup, Message, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from ScarletV5 import app
 from ScarletV5.utils import help_pannel
 from ScarletV5.utils.database import get_lang
@@ -46,8 +46,23 @@ async def helper_private(
 @app.on_message(filters.command(["help"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
 async def help_com_group(client, message: Message, _):
-    keyboard = private_help_panel(_)
-    await message.reply_text(_["help_2"], reply_markup=keyboard)
+    bot = await client.get_me()
+    
+    keyboard = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    text=_["S_B_4"],
+                    url=f"https://t.me/{bot.username}?start=help",
+                )
+            ]
+        ]
+    )
+    
+    await message.reply_text(
+        _["help_2"],
+        reply_markup=keyboard
+    )
 
 
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
