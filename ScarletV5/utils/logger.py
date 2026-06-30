@@ -1,7 +1,7 @@
 from pyrogram.enums import ParseMode
 
-from Scarlet import app
-from Scarlet.utils.database import is_on_off
+from ScarletV5 import app
+from ScarletV5.utils.database import is_on_off
 from config import LOGGER_ID
 
 
