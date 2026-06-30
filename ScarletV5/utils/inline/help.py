@@ -105,7 +105,7 @@ def first_page(_):
                 InlineKeyboardButton(text="𝐂‌ʟσηє 𝐖‌σꝛᴋsᴘᴧᴄє", callback_data="help_callback chelp", style=ButtonStyle.PRIMARY),
             ],
             [
-                InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="Axiom_Help", style=ButtonStyle.DANGER),
+                InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER),
             ],
         ]
     )
