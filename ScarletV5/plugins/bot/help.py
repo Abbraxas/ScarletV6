@@ -3,7 +3,7 @@ from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from ScarletV5 import app
-from ScarletV5.utils import help_pannel
+from ScarletV5.utils import help_pannel, second_page
 from ScarletV5.utils.database import get_lang
 from ScarletV5.utils.decorators.language import LanguageStart, languageCB
 from ScarletV5.utils.inline.help import help_back_markup, private_help_panel
