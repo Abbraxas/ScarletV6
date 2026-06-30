@@ -9,6 +9,14 @@ from ScarletV5.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
 from ScarletV5.utils.stuffs.helper import Helper
+from pyrogram.enums import ButtonStyle
+
+def random_style():
+    return random.choice([
+        ButtonStyle.SUCCESS,
+        ButtonStyle.DANGER,
+        ButtonStyle.PRIMARY
+    ])
 
 @app.on_message(filters.command(["help"]) & filters.private & ~BANNED_USERS)
 @app.on_callback_query(filters.regex("Axiom_Help") & ~BANNED_USERS)
@@ -54,6 +62,7 @@ async def help_com_group(client, message: Message, _):
                 InlineKeyboardButton(
                     text=_["S_B_4"],
                     url=f"https://t.me/{bot.username}?start=help",
+                    style=random_style(),
                 )
             ]
         ]
@@ -118,7 +127,7 @@ async def on_back_button(client, CallbackQuery):
 async def mb_plugin_button(client, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
     cb = callback_data.split(None, 1)[1]
-    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"mbot_cb")]])
+    keyboard = InlineKeyboardMarkup([[InlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"mbot_cb", style=ButtonStyle.DANGER)]])
     if cb == "Okieeeeee":
         await CallbackQuery.edit_message_text(f"`something errors`",reply_markup=keyboard,parse_mode=enums.ParseMode.MARKDOWN)
     else:
