@@ -25,7 +25,7 @@ def _create_rounded_image(img, radius):
     result.paste(img, (0, 0), mask)
     return result
 
-def _add_soft_glow(img, glow_color=(90, 170, 90), num_layers=15):
+def _add_soft_glow(img, glow_color=(90, 170, 90), num_layers=15, glow_radius=15, glow_strength=35):
     """Add multiple soft glow layers around thumbnail - edges ko soft karega"""
     # Create larger canvas for glow layers
     expand_size = num_layers * 3
@@ -35,7 +35,7 @@ def _add_soft_glow(img, glow_color=(90, 170, 90), num_layers=15):
     
     # Draw 15 layers of expanding rounded rectangles (soft fade effect)
     for layer in range(num_layers, 0, -1):
-        opacity = int(35 * (layer / num_layers))  # 35 se 0 tak fade
+        opacity = int(glow_strength * (layer / num_layers))  # glow_strength use kiya
         expand = layer * 2
         
         glow_draw.rounded_rectangle(
@@ -44,8 +44,8 @@ def _add_soft_glow(img, glow_color=(90, 170, 90), num_layers=15):
             fill=(*glow_color, opacity)
         )
     
-    # Heavy blur for ultra-soft glow
-    glow_img = glow_img.filter(ImageFilter.GaussianBlur(15))
+    # Heavy blur for ultra-soft glow (glow_radius use kiya)
+    glow_img = glow_img.filter(ImageFilter.GaussianBlur(glow_radius))
     
     # Paste original image in center
     paste_x = expand_size // 2
@@ -76,13 +76,25 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     try:
         from youtubesearchpython.__future__ import VideosSearch
         data = (await VideosSearch(url, limit=1).next())["result"][0]
-        title = re.sub(r"[\x00-\x1f\x7f]", "", data.get("title", "Unknown")).strip()
-        duration = data.get("duration", "00:00") or "00:00"
-        thumb_url = data.get("thumbnails", [{}])[-1].get("url", "").split("?")[0]
-        v_raw = str(data.get("viewCount", {}).get("short", "N/A"))
+        
+        # --- FIX: Har field ke sath 'or' lagaya hai taaki None crash na kare ---
+        title_raw = data.get("title") or "Unknown Song"
+        title = re.sub(r"[\x00-\x1f\x7f]", "", str(title_raw)).strip()
+        
+        duration = str(data.get("duration") or "00:00")
+        
+        thumbs = data.get("thumbnails") or [{}]
+        thumb_url = str(thumbs[-1].get("url") or "").split("?")[0]
+        
+        view_count = data.get("viewCount") or {}
+        v_raw = str(view_count.get("short") or "N/A")
         vc = re.sub(r'\s*views?\s*', '', v_raw, flags=re.IGNORECASE).strip()
         views = f"{vc} views"
-        channel = data.get("channel", {}).get("name", "Unknown")
+        
+        channel_data = data.get("channel") or {}
+        channel = str(channel_data.get("name") or "Unknown")
+        # ----------------------------------------------------------------------
+        
     except Exception as e:
         print(f"[ERROR] Metadata: {e}")
     
