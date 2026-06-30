@@ -1,7 +1,7 @@
 from typing import Union
 
 from pyrogram import filters, types, Client
-from pyrogram.types import InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 
 from ScarletV5 import app
 from ScarletV5.utils import first_page, second_page
@@ -93,8 +93,23 @@ async def help_com_group(client, message: Message, _):
         user_command_count[user_id] = 1
         user_last_message_time[user_id] = current_time
 
-    keyboard = private_help_panel(_)
-    await message.reply_text(_["help_2"], reply_markup=keyboard)
+    bot = await client.get_me()
+    
+    keyboard = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton(
+                    text=_["S_B_4"],
+                    url=f"https://t.me/{bot.username}?start=help",
+                )
+            ]
+        ]
+    )
+    
+    await message.reply_text(
+        _["help_2"],
+        reply_markup=keyboard
+    )
 
 
 # Zeo
