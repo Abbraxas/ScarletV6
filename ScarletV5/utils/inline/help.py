@@ -97,6 +97,21 @@ def first_page(_):
                 InlineKeyboardButton(text=_["H_B_6"], callback_data="help_callback hb6", style=ButtonStyle.SUCCESS),
             ],
             [
+                InlineKeyboardButton(text="𝐏‌єꝛsσηᴧʟɪᴢє 𝐅‌σꝛɢє", callback_data="help_callback clone_start", style=ButtonStyle.SUCCESS),
+                InlineKeyboardButton(text="𝐂‌ʟσηє 𝐖‌σꝛᴋsᴘᴧᴄє", callback_data="help_callback chelp", style=ButtonStyle.SUCCESS),
+            ],
+            [
+                InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER),
+                InlineKeyboardButton(text="⏭ 𝐍ᴇxᴛ", callback_data="help_next", style=ButtonStyle.PRIMARY),
+            ],
+        ]
+    )
+
+
+def second_page(_):
+    return InlineKeyboardMarkup(
+        [
+            [
                 InlineKeyboardButton(text=_["H_B_13"], callback_data="help_callback hb13", style=ButtonStyle.SUCCESS),
                 InlineKeyboardButton(text=_["H_B_12"], callback_data="help_callback hb12", style=ButtonStyle.SUCCESS),
                 InlineKeyboardButton(text=_["H_B_9"], callback_data="help_callback cloghelp", style=ButtonStyle.SUCCESS),
@@ -107,47 +122,7 @@ def first_page(_):
                 InlineKeyboardButton(text=_["H_B_15"], callback_data="help_callback hb15", style=ButtonStyle.SUCCESS),
             ],
             [
-                InlineKeyboardButton(text="𝐏‌єꝛsσηᴧʟɪᴢє 𝐅‌σꝛɢє", callback_data="help_callback clone_start", style=ButtonStyle.PRIMARY),
-                InlineKeyboardButton(text="𝐂‌ʟσηє 𝐖‌σꝛᴋsᴘᴧᴄє", callback_data="help_callback chelp", style=ButtonStyle.PRIMARY),
-            ],
-            [
-                InlineKeyboardButton(text="⏭ 𝐍ᴇxᴛ", callback_data="help_next",),
-            ],
-            [
-                InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER),
-            ],
-        ]
-    )
-
-
-def second_page(_):
-    return InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(text=_["H_B_7"], callback_data="help_callback hb7", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_19"], callback_data="help_callback hb19", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_14"], callback_data="help_callback hb14", style=ButtonStyle.SUCCESS),
-            ],
-            [
-                InlineKeyboardButton(text=_["H_B_15"], callback_data="help_callback hb15", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_16"], callback_data="help_callback hb16", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_17"], callback_data="help_callback hb17", style=ButtonStyle.SUCCESS),
-            ],
-            [
-                InlineKeyboardButton(text=_["H_B_18"], callback_data="help_callback hb18", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_13"], callback_data="help_callback hb13", style=ButtonStyle.SUCCESS),
-            ],
-            [
-                InlineKeyboardButton(text=_["H_B_20"], callback_data="help_callback hb20", style=ButtonStyle.SUCCESS),
-                InlineKeyboardButton(text=_["H_B_22"], callback_data="help_callback hb22", style=ButtonStyle.SUCCESS),
-            ],
-            [
-                InlineKeyboardButton(text=_["H_B_21"], callback_data="help_callback hb21", style=ButtonStyle.SUCCESS),
-            ],
-            [
-                InlineKeyboardButton(text="⏮ 𝐁ᴀᴄᴋ", callback_data="help_back",),
-            ],
-            [
+                InlineKeyboardButton(text="⏮ 𝐁ᴀᴄᴋ", callback_data="help_back", style=ButtonStyle.PRIMARY),
                 InlineKeyboardButton(
                     text=_["BACK_BUTTON"],
                     callback_data="Axiom_Help", 
