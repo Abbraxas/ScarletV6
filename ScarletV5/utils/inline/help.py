@@ -101,9 +101,8 @@ def first_page(_):
                 InlineKeyboardButton(text=_["H_B_15"], callback_data="help_callback hb15", style=ButtonStyle.SUCCESS),
             ],
             [
+                InlineKeyboardButton(text="𝐏‌єꝛsσηᴧʟɪᴢє 𝐅‌σꝛɢє", callback_data="help_callback clone_start", style=ButtonStyle.PRIMARY),
                 InlineKeyboardButton(text=_["C_B_1"], callback_data="help_callback chelp", style=ButtonStyle.SUCCESS),
-                # ✅ NEW BUTTON ADDED HERE
-                InlineKeyboardButton(text="⚙️ Start Settings", callback_data="help_callback clone_start", style=ButtonStyle.PRIMARY),
             ],
             [
                 InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER),
