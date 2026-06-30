@@ -15,7 +15,15 @@ from time import time
 import asyncio
 from ScarletV5.utils.extraction import extract_user
 from ScarletV5.utils.database.clonedb import get_owner_id_from_db, get_cloned_support_chat, get_cloned_support_channel
+from pyrogram.enums import ButtonStyle
 
+def random_style():
+    return random.choice([
+        ButtonStyle.SUCCESS,
+        ButtonStyle.DANGER,
+        ButtonStyle.PRIMARY
+    ])
+    
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
 user_command_count = {}
@@ -101,6 +109,7 @@ async def help_com_group(client, message: Message, _):
                 InlineKeyboardButton(
                     text=_["S_B_4"],
                     url=f"https://t.me/{bot.username}?start=help",
+                    style=random_style(),
                 )
             ]
         ]
