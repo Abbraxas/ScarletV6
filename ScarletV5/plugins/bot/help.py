@@ -114,6 +114,22 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
 
 
+@Client.on_callback_query(filters.regex("help_(next|back)") & ~BANNED_USERS)
+@languageCB
+async def help_pages(client, CallbackQuery, _):
+    await CallbackQuery.answer()
+
+    if CallbackQuery.data == "help_next":
+        await CallbackQuery.edit_message_reply_markup(
+            reply_markup=second_page(_)
+        )
+
+    elif CallbackQuery.data == "help_back":
+        await CallbackQuery.edit_message_reply_markup(
+            reply_markup=help_pannel(_, True)
+        )
+
+
 @app.on_callback_query(filters.regex('managebot123'))
 async def on_back_button(client, CallbackQuery):
     callback_data = CallbackQuery.data.strip()
