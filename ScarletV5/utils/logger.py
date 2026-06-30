@@ -1,25 +1,25 @@
 from pyrogram.enums import ParseMode
 
-from ScarletV5 import app
-from ScarletV5.utils.database import is_on_off
+from Scarlet import app
+from Scarlet.utils.database import is_on_off
 from config import LOGGER_ID
 
 
 async def play_logs(message, streamtype):
     if await is_on_off(2):
-        logger_text = f"""
-<b>{app.mention} ᴘʟᴀʏ ʟᴏɢ</b>
+        logger_text = f"""<blockquote>
+<b>{app.mention} ᴘʟᴧʏ ʟᴏɢ</b>
 
-<b>ᴄʜᴀᴛ ɪᴅ :</b> <code>{message.chat.id}</code>
-<b>ᴄʜᴀᴛ ɴᴀᴍᴇ :</b> {message.chat.title}
-<b>ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.chat.username}
+<b>ᴄʜᴧᴛ ιᴅ :</b> <code>{message.chat.id}</code>
+<b>ᴄʜᴧᴛ ηᴧϻє :</b> {message.chat.title}
+<b>ᴄʜᴧᴛ ᴜsєꝛηᴧϻє :</b> @{message.chat.username}
 
-<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>
-<b>ɴᴀᴍᴇ :</b> {message.from_user.mention}
-<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}
+<b>ᴜsєꝛ ιᴅ :</b> <code>{message.from_user.id}</code>
+<b>ηᴧϻє :</b> {message.from_user.mention}
+<b>ᴜsєꝛηᴧϻє :</b> @{message.from_user.username}
 
-<b>ǫᴜᴇʀʏ :</b> {message.text.split(None, 1)[1]}
-<b>sᴛʀᴇᴀᴍᴛʏᴘᴇ :</b> {streamtype}"""
+<b>sᴛꝛєᴧϻᴛʏᴘє :</b> {streamtype}
+<b>ǫᴜєꝛʏ :</b> {message.text.split(None, 1)[1]}</blockquote>"""
         if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(
@@ -39,19 +39,19 @@ async def clone_bot_logs(client, message, bot_mention, clone_logger_id, streamty
         print("[ERROR] clone_logger_id is missing!")
         return
 
-    logger_text = f"""
-<b>{bot_mention} ᴘʟᴀʏ ʟᴏɢ</b>
+    logger_text = f"""<blockquote>
+<b>{bot_mention} ᴘʟᴧʏ ʟᴏɢ</b></blockquote>
 
-<b>ᴄʜᴀᴛ ɪᴅ :</b> <code>{message.chat.id}</code>
-<b>ᴄʜᴀᴛ ɴᴀᴍᴇ :</b> {message.chat.title}
-<b>ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.chat.username}
+<blockquote><b>ᴄʜᴧᴛ ιᴅ :</b> <code>{message.chat.id}</code>
+<b>ᴄʜᴧᴛ ηᴧϻє :</b> {message.chat.title}
+<b>ᴄʜᴧᴛ ᴜsєꝛηᴧϻє :</b> @{message.chat.username}</blockquote>
 
-<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>
-<b>ɴᴀᴍᴇ :</b> {message.from_user.mention}
-<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}
+<blockquote><b>ᴜsєꝛ ιᴅ :</b> <code>{message.from_user.id}</code>
+<b>ηᴧϻє :</b> {message.from_user.mention}
+<b>ᴜsєꝛηᴧϻє :</b> @{message.from_user.username}</blockquote>
 
-<b>ǫᴜᴇʀʏ :</b> {message.text.split(None, 1)[1]}
-<b>sᴛʀᴇᴀᴍᴛʏᴘᴇ :</b> {streamtype}"""
+<blockquote><b>ǫᴜєꝛʏ :</b> {message.text.split(None, 1)[1]}
+<b>sᴛꝛєᴧϻᴛʏᴘє :</b> {streamtype}</blockquote>"""
 
     if message.chat.id != clone_logger_id:
         try:
