@@ -114,7 +114,7 @@ async def helper_cb(client, CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
 
 
-@Client.on_callback_query(filters.regex("help_(next|back)") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("help_(next|back)") & ~BANNED_USERS)
 @languageCB
 async def help_pages(client, CallbackQuery, _):
     await CallbackQuery.answer()
