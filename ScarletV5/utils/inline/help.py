@@ -105,6 +105,9 @@ def first_page(_):
                 InlineKeyboardButton(text="𝐂‌ʟσηє 𝐖‌σꝛᴋsᴘᴧᴄє", callback_data="help_callback chelp", style=ButtonStyle.PRIMARY),
             ],
             [
+                InlineKeyboardButton(text="⏭ 𝐍ᴇxᴛ", callback_data="help_next",),
+            ],
+            [
                 InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close", style=ButtonStyle.DANGER),
             ],
         ]
@@ -134,6 +137,9 @@ def second_page(_):
             ],
             [
                 InlineKeyboardButton(text=_["H_B_21"], callback_data="help_callback hb21", style=ButtonStyle.SUCCESS),
+            ],
+            [
+                InlineKeyboardButton(text="⏮ 𝐁ᴀᴄᴋ", callback_data="help_back",),
             ],
             [
                 InlineKeyboardButton(
