@@ -47,7 +47,7 @@ async def helper_private(
 @LanguageStart
 async def help_com_group(client, message: Message, _):
     keyboard = private_help_panel(_)
-    await message.reply_text(_["help_2"], reply_markup=InlineKeyboardMarkup(keyboard))
+    await message.reply_text(_["help_2"], reply_markup=keyboard)
 
 
 @app.on_callback_query(filters.regex("help_callback") & ~BANNED_USERS)
