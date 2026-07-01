@@ -6,7 +6,7 @@ from pyrogram import __version__ as pyrover
 from pyrogram import filters
 from pyrogram.errors import MessageIdInvalid
 from pyrogram.types import InputMediaPhoto, Message
-from pytgcalls.__version__ import __version__ as pytgver
+import pytgcalls; pytgver = pytgcalls.__version__
 
 import config
 from ScarletV5 import app
