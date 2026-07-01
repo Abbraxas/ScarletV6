@@ -225,10 +225,18 @@ async def restart_bots():
                 API_HASH,
                 bot_token=bot_token,
                 plugins=dict(root="ScarletV5.cplugin"),
-            )
-            await ai.start()
-            print(botNumber)
-            botNumber += 1
+             )
+             try:
+                 await ai.start()
+             except Exception as e:
+                 if "database is locked" in str(e).lower():
+                     logging.warning(f"Database locked for bot {bot_token}. Skipping it.")
+                 else:
+                     logging.error(f"Error starting bot {bot_token}: {e}")
+                 continue
+             
+             print(botNumber)
+             botNumber += 1
 
             bot = await ai.get_me()
             if bot.id not in CLONES:
