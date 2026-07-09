@@ -160,7 +160,7 @@ async def get_thumb(videoid: str, user_name: str = "AxiomUser") -> str:
     white_text = (255, 255, 255)    # Pure white for names
     
     # "Requested By:- " - Purple accent color
-    prefix_text = "𝐈ɴɪᴛɪᴀᴛᴏʀ "
+    prefix_text = "Initiator : "
     draw.text((title_x, requested_y), prefix_text, 
               fill=purple_accent, font=font_requested)
     
