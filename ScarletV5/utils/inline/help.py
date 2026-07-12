@@ -1,3 +1,4 @@
+import random
 from typing import Union
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ScarletV5 import app
