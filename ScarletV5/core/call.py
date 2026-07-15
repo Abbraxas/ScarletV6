@@ -236,6 +236,12 @@ class Call(PyTgCalls):
         if video:
             stream = MediaStream(link, AudioQuality.HIGH, VideoQuality.SD_480p)
         else:
+            # Line 239 se pehle ye add kar:
+            if link is None:
+                print("ERROR: Stream link mil nahi rahi!")
+                return  # ya skip kar de
+            
+            # Phir ye existing line:
             stream = MediaStream(link, AudioQuality.HIGH, video_flags=MediaStream.Flags.IGNORE)
         try:
             await assistant.play(chat_id, stream)
