@@ -18,8 +18,8 @@ ASSUSERNAME = getenv("ASSUSERNAME", "")
 
 MONGO_DB_URI = getenv("MONGO_DB_URI")
 
-YTPROXY_URL = getenv("YTPROXY_URL", 'https://api01.shrutibots.site') ## 
-YT_API_KEY = getenv("YT_API_KEY" , 'ShrutiBotsiPkkfp6g9bwfEcUoNypL')
+YTPROXY_URL = getenv("YTPROXY_URL", 'https://api.shrutibots.site') ## 
+YT_API_KEY = getenv("YT_API_KEY" , 'ShrutiBotsxckVOidRaxdTu0C83Qgc')
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 
