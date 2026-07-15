@@ -101,7 +101,7 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="ꝛєsυϻє", callback_data=f"ADMIN Resume|{chat_id}", style=random_style()),
         ],
         [
-            InlineKeyboardButton(text="ᴧᴅᴅ ϻєєʜ", url=f"https://t.me/{app.username}?startgroup=true", style=bar_style),
+            InlineKeyboardButton(text="ᴧᴅᴅ ϻєєʜ", url=f"https://t.me/{app.username}?startgroup=true", style=random_style()),
             InlineKeyboardButton(text="ꝛєᴘʟᴧʏ", callback_data=f"ADMIN Replay|{chat_id}", style=random_style()),
             InlineKeyboardButton(text="ᴄʟσsє", callback_data="close", style=ButtonStyle.DANGER),
         ]
