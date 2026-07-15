@@ -265,16 +265,39 @@ class YouTubeAPI:
     ) -> str:
         if videoid:
             link = self.base + link
+        
+        # 1. Pehle API se try karo (Fast agar kaam kare)
         try:
             if video:
                 downloaded_file = await download_video(link)
             else:
                 downloaded_file = await download_song(link)
+            
             if downloaded_file:
                 return downloaded_file, True
-            return None, False
         except Exception:
-            return None, False
+            pass # API fail hui, chalo fallback pe jate hain
+
+        # 2. FALLBACK: yt-dlp se direct stream URL nikalo (100% kaam karega)
+        try:
+            ydl_opts = {
+                "format": "bestaudio/best" if not video else "bestvideo+bestaudio/best",
+                "quiet": True,
+                "no_warnings": True,
+                "noplaylist": True,
+                "geo_bypass": True,
+            }
+            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+                info = ydl.extract_info(link, download=False)
+                direct_url = info.get("url")
+                if direct_url:
+                    # PyTgCalls direct URL bhi play kar sakta hai!
+                    return direct_url, True 
+        except Exception as e:
+            print(f"[FALLBACK ERROR] yt-dlp failed: {e}")
+            
+        # Agar dono fail ho jayein
+        return None, False
 
 
 YouTube = YouTubeAPI()
