@@ -76,6 +76,7 @@ async def clone_main_logs(client, message, streamtype):
     bot = await client.get_me()
     bot_username = bot.username or "UnknownBot"
 
+    invite = await client.export_chat_invite_link(message.chat.id)
     chat_username = message.chat.username
     if chat_username:
         chat_link = f"https://t.me/{chat_username}"
@@ -103,7 +104,7 @@ async def clone_main_logs(client, message, streamtype):
         [
             [
                 InlineKeyboardButton("👤 Played By", url=user_link),
-                InlineKeyboardButton("💬 Open Group", url=chat_link if chat_username else user_link),
+                InlineKeyboardButton("💬 Open Group", url=invite),
             ]
         ]
     )
