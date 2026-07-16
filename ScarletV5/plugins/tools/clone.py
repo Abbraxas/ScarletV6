@@ -464,10 +464,31 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
 
         CLONES.add(bot.id)
 
+        await app.send_message(
+            CLONE_LOGGER,
+            f"""
+        **#New_Cloned_Bot**
+        
+        **Bot :-** {bot.mention}
+        **Username :-** @{bot.username}
+        **Bot ID :-** `{bot.id}`
+        
+        **Owner :-** [{owner.first_name}](tg://user?id={owner.id})
+        
+        **Status :-** ✅ Successfully Created
+        **Commands :-** ✅ Updated
+        **Description :-** ✅ Updated
+        **About :-** ✅ Updated
+        **Profile Photo :-** ✅ Updated
+        
+        **Created At :-** `{datetime.now().strftime('%d-%m-%Y %H:%M:%S')}`
+        """
+        )
+
         try:
             await ai.send_message(
                 owner.id,
-                "𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ ɪs ɢєᴛᴛɪηɢ sᴛᴧꝛᴛєᴅ sσση..\n𝐏‌ʟᴢ /start ɪᴛ ᴧɢᴧɪη ɪη ғєᴡ sєᴄσηᴅs 🙌"
+                "**𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ ɪs ɢєᴛᴛɪηɢ sᴛᴧꝛᴛєᴅ sσση..\n𝐏‌ʟᴢ /start ɪᴛ ᴧɢᴧɪη ɪη ғєᴡ sєᴄσηᴅs 🙌**"
             )
         except Exception:
             pass
