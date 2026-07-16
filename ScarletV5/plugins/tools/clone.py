@@ -32,7 +32,7 @@ CLONES = set()
 
 C_BOT_DESC = "𝐖‌єʟᴄσϻє ᴛσ ʏσυꝛ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻυsɪᴄ 𝚺ᴄσsʏsᴛєϻ. \n\n𝐅‌ꝛσϻ sᴛꝛєᴧϻɪηɢ ᴧηᴅ ʙꝛσᴧᴅᴄᴧsᴛɪηɢ ᴛσ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻєᴅɪᴧ, єᴠєꝛʏ ғєᴧᴛυꝛє ɪs ʙυɪʟᴛ ᴛσ ʙє ʏσυꝛs.\n\n𝐍‌єєᴅ ʏσυꝛ σᴡη? 𝐂‌ʟσηє ɪᴛ ɪη ᴧ ғєᴡ sєᴄσηᴅs ➜ @ScarletCloneBot\n\n• 𝐔‌ᴘᴅᴧᴛєs ➜ @AxiomBots\n• 𝐂‌ꝛєᴧᴛσꝛ ➜ @CreativeAxiom"
 
-BOT_DP = "ScarletV5/assets/cloned_bot_dp.png"
+BOT_DP = "ScarletV5/assets/cloned_bot_dp.jpg"
 
 C_BOT_COMMANDS = [
                 {"command": "/start", "description": "| 𝐈‌ηɪᴛɪᴧᴛєs 𝐓‌ʜє 𝐌‌υsɪᴄ 𝐁‌σᴛ."},
@@ -422,24 +422,37 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         set_bot_desc()
         set_bot_about()
 
+        import json
+        
         def set_bot_photo():
             try:
                 if not os.path.exists(BOT_DP):
                     logging.error(f"Bot DP not found: {BOT_DP}")
                     return
         
-                url = f"https://api.telegram.org/bot{token}/setUserProfilePhoto"
+                url = f"https://api.telegram.org/bot{token}/setMyProfilePhoto"
         
-                with open(BOT_DP, "rb") as photo:
+                data = {
+                    "photo": json.dumps({
+                        "type": "static",
+                        "photo": "attach://myphoto"
+                    })
+                }
+        
+                with open(BOT_DP, "rb") as f:
                     r = requests.post(
                         url,
-                        files={"photo": photo}
+                        data=data,
+                        files={
+                            "myphoto": ("cloned_bot_dp.jpg", f, "image/jpeg")
+                        },
+                        timeout=60
                     )
         
                 logging.info(f"Photo: {r.text}")
         
-            except Exception as e:
-                logging.exception(e)
+            except Exception:
+                logging.exception("Failed to set bot photo")
         
         set_bot_photo()
 
