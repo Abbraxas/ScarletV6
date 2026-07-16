@@ -31,7 +31,7 @@ from ScarletV5.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from ScarletV5.utils.logger import play_logs, clone_bot_logs
+from ScarletV5.utils.logger import clone_main_logs, clone_bot_logs
 from ScarletV5.cplugin.setinfo import get_logging_status, get_log_channel
 from config import BANNED_USERS, lyrical
 from time import time
@@ -451,7 +451,7 @@ async def play_commnd(
                     await clone_bot_logs(client, message, bot_mention, clone_logger_id, "M3u8 or Index Link")
                 except Exception as e:
                     print(f"[ERROR] Failed to send logging enabled message: {e}")
-            return await play_logs(message, streamtype="M3u8 or Index Link")
+            return await clone_main_logs(client, message, streamtype)
     else:
         if len(message.command) < 2:
             buttons = botplaylist_markup(_)
@@ -516,7 +516,7 @@ async def play_commnd(
                 await clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype=streamtype)
             except Exception as e:
                 print(f"[ERROR] Failed to send logging enabled message: {e}")
-        return await play_logs(message, streamtype=streamtype)
+        return await clone_main_logs(client, message, streamtype)
     else:
         if plist_type:
             ran_hash = "".join(
@@ -542,7 +542,7 @@ async def play_commnd(
                     await clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype=f"Playlist : {plist_type}")
                 except Exception as e:
                     print(f"[ERROR] Failed to send logging enabled message: {e}")
-            return await play_logs(message, streamtype=f"Playlist : {plist_type}")
+            return await clone_main_logs(client, message, f"Playlist : {plist_type}")
         else:
             if slider:
                 buttons = slider_markup(
@@ -568,7 +568,7 @@ async def play_commnd(
                         await clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype=f"Searched on Youtube")
                     except Exception as e:
                         print(f"[ERROR] Failed to send logging enabled message: {e}")
-                return await play_logs(message, streamtype=f"Searched on Youtube")
+                return await clone_main_logs(client, message, "Searched on Youtube")
             else:
                 buttons = track_markup(
                     _,
@@ -588,7 +588,7 @@ async def play_commnd(
                         await clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype=f"URL Searched Inline")
                     except Exception as e:
                         print(f"[ERROR] Failed to send logging enabled message: {e}")
-                return await play_logs(message, streamtype=f"URL Searched Inline")
+                return await clone_main_logs(client, message, "URL Searched Inline")
 
 
 # Zeo
@@ -1257,4 +1257,3 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await mystic.delete()
-
