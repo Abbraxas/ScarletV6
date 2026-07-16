@@ -26,6 +26,7 @@ from ScarletV5.utils.database.clonedb import get_owner_id_from_db
 from config import SUPPORT_CHAT, OWNER_ID
 
 from datetime import datetime
+from pyrogram.types import ManagedBotUpdated
 CLONES = set()
 
 C_BOT_DESC = "𝐖‌єʟᴄσϻє ᴛσ ʏσυꝛ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻυsɪᴄ 𝚺ᴄσsʏsᴛєϻ. \n\n𝐅‌ꝛσϻ sᴛꝛєᴧϻɪηɢ ᴧηᴅ ʙꝛσᴧᴅᴄᴧsᴛɪηɢ ᴛσ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻєᴅɪᴧ, єᴠєꝛʏ ғєᴧᴛυꝛє ɪs ʙυɪʟᴛ ᴛσ ʙє ʏσυꝛs.\n\n𝐍‌єєᴅ ʏσυꝛ σᴡη? 𝐂‌ʟσηє ɪᴛ ɪη ᴧ ғєᴡ sєᴄσηᴅs ➜ @ScarletCloneBot\n\n• 𝐔‌ᴘᴅᴧᴛєs ➜ @AxiomBots\n• 𝐂‌ꝛєᴧᴛσꝛ ➜ @CreativeAxiom"
@@ -362,3 +363,55 @@ async def list_cloned_bots(client, message, _):
     except Exception as e:
         logging.exception(e)
         await message.reply_text("An error occurred while listing cloned bots.")
+
+
+@app.on_managed_bot()
+async def managed_clone(client: Client, update: ManagedBotUpdated):
+    try:
+        bot = update.bot
+        owner = update.user
+
+        token = await client.get_managed_bot_token(bot.id)
+
+        logging.info(f"Managed bot detected: @{bot.username}")
+
+        ai = Client(
+            f"clone_{bot.id}",
+            api_id=API_ID,
+            api_hash=API_HASH,
+            bot_token=token,
+            plugins=dict(root="ScarletV5.cplugin"),
+        )
+
+        await ai.start()
+
+        details = {
+            "bot_id": bot.id,
+            "is_bot": True,
+            "user_id": owner.id,
+            "name": bot.first_name,
+            "token": token,
+            "username": bot.username,
+            "channel": "AxiomBots",
+            "support": "Axlomm",
+            "premium": False,
+            "Date": False,
+        }
+
+        clonebotdb.update_one(
+            {"bot_id": bot.id},
+            {"$set": details},
+            upsert=True
+        )
+
+        CLONES.add(bot.id)
+
+        await ai.send_message(
+            owner.id,
+            "✅ Your clone is ready."
+        )
+
+        logging.info(f"{bot.username} started.")
+
+    except Exception as e:
+        logging.exception(e)
