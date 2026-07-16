@@ -98,7 +98,7 @@ def playmode_users_markup(
             InlineKeyboardButton(
                 text=_["ST_B_8"] if Group == True else _["ST_B_9"],
                 callback_data="CHANNELMODECHANGE",
-                style=ButtonStyle.SUCCESS.
+                style=ButtonStyle.SUCCESS,
             ),
         ],
         [
