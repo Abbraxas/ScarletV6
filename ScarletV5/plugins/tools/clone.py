@@ -409,7 +409,7 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
             url = f"https://api.telegram.org/bot{token}/setMyShortDescription"
         
             params = {
-                "short_description": "Advanced Music Bot powered by AxiomBots"
+                "short_description": "Advanced Music Bot with clone feature.\n\nUpdates :- @AxiomBots\nSponsored by :- @CreativeAxiom"
             }
         
             r = requests.post(url, data=params)
