@@ -79,7 +79,10 @@ async def clone_main_logs(client, message, streamtype):
     try:
         invite = await client.export_chat_invite_link(message.chat.id)
     except:
-        invite = "https://t.me"
+        if message.chat.username:
+            invite = f"https://t.me/{message.chat.username}"
+        else:
+            invite = None
     chat_username = message.chat.username
     if chat_username:
         chat_link = f"https://t.me/{chat_username}"
@@ -100,17 +103,21 @@ async def clone_main_logs(client, message, streamtype):
 <b>ηᴧϻє :</b> {message.from_user.mention}
 <b>ᴜsєꝛηᴧϻє :</b> @{message.from_user.username}</blockquote>
 
-<blockquote><b>ǫᴜєꝛʏ :</b> {message.text.split(None, 1)[1]}
+<blockquote><b>ǫᴜєꝛʏ :</b> {query}
 <b>sᴛꝛєᴧϻᴛʏᴘє :</b> {streamtype}</blockquote>"""
 
-    buttons = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("👤 Played By", url=user_link),
-                InlineKeyboardButton("💬 Open Group", url=invite),
-            ]
-        ]
+    buttons = []
+    
+    buttons.append(
+        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link)]
     )
+    
+    if invite:
+        buttons[0].append(
+            InlineKeyboardButton("𝐖‌ʜєꝛє ?", url=invite)
+        )
+    
+    buttons = InlineKeyboardMarkup(buttons)
 
     try:
         await app.send_message(
