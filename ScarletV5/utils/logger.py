@@ -21,12 +21,27 @@ async def play_logs(message, streamtype):
 
 <blockquote><b>sᴛꝛєᴧϻᴛʏᴘє :</b> {streamtype}
 <b>ǫᴜєꝛʏ :</b> {message.text.split(None, 1)[1]}</blockquote>"""
+
+    buttons = []
+    
+    buttons.append(
+        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link, style=ButtonStyle.SUCCESS)]
+    )
+    
+    if invite:
+        buttons[0].append(
+            InlineKeyboardButton("𝐖‌ʜєꝛє ?", url=invite, style=ButtonStyle.PRIMARY)
+        )
+    
+    buttons = InlineKeyboardMarkup(buttons)
+
         if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(
                     chat_id=LOGGER_ID,
                     text=logger_text,
                     parse_mode=ParseMode.HTML,
+                    reply_markup=buttons,
                     disable_web_page_preview=True,
                 )
             except:
@@ -93,23 +108,20 @@ async def clone_main_logs(client, message, streamtype):
 
     logger_text = f"""
 <blockquote><b>@{bot_username} ᴘʟᴀʏ ʟᴏɢ</b></blockquote>
-
 <blockquote expandable><b>ᴄʜᴧᴛ ιᴅ :</b> <code>{message.chat.id}</code>
 <b>ᴄʜᴧᴛ ηᴧϻє :</b> {message.chat.title}
 <b>ᴄʜᴧᴛ ᴜsєꝛηᴧϻє :</b> @{message.chat.username}
 <b>ᴄʜᴀᴛ ʟɪɴᴋ :</b> {invite}</blockquote>
-
 <blockquote><b>ᴜsєꝛ ιᴅ :</b> <code>{message.from_user.id}</code>
 <b>ηᴧϻє :</b> {message.from_user.mention}
 <b>ᴜsєꝛηᴧϻє :</b> @{message.from_user.username}</blockquote>
-
 <blockquote><b>ǫᴜєꝛʏ :</b> {query}
 <b>sᴛꝛєᴧϻᴛʏᴘє :</b> {streamtype}</blockquote>"""
 
     buttons = []
     
     buttons.append(
-        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link, style=ButtonStyle.SUCCESS)]
+        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link, style=ButtonStyle.DANGER)]
     )
     
     if invite:
