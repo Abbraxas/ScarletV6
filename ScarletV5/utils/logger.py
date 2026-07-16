@@ -7,6 +7,14 @@ from config import LOGGER_ID
 
 
 async def play_logs(message, streamtype):
+    try:
+        invite = await client.export_chat_invite_link(message.chat.id)
+    except:
+        if message.chat.username:
+            invite = f"https://t.me/{message.chat.username}"
+        else:
+            invite = None
+    user_link = f"tg://user?id={message.from_user.id}"
     if await is_on_off(2):
         logger_text = f"""<blockquote>
 <b>{app.mention} ᴘʟᴧʏ ʟᴏɢ</b></blockquote>
