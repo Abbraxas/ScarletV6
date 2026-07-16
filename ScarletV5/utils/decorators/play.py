@@ -1,6 +1,6 @@
 import asyncio
 
-from pyrogram.enums import ChatMemberStatus
+from pyrogram.enums import ChatMemberStatus, ButtonStyle
 from pyrogram.errors import (
     ChatAdminRequired,
     InviteRequestSent,
@@ -39,6 +39,7 @@ def PlayWrapper(command):
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
                             callback_data="AxiommousAdmin",
+                            style=ButtonStyle.SUCCESS,
                         ),
                     ]
                 ]
@@ -128,7 +129,7 @@ def PlayWrapper(command):
                     return await message.reply_text(
                         _["call_2"].format(
                             app.mention, userbot.id, userbot.name, userbot.username
-                        ), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text= "๏ 𝗨ɴʙᴀɴ 𝗔ssɪsᴛᴀɴᴛ ๏", callback_data=f"unban_assistant")]])
+                        ), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text= "𝐔‌ηʙᴧη 𝛅ᴄᴧꝛʟєᴛ", callback_data=f"unban_assistant", style=ButtonStyle.SUCCESS)]])
                     )
             except UserNotParticipant:
                 if chat_id in links:
@@ -207,6 +208,7 @@ def CPlayWrapper(command):
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
                             callback_data="AxiommousAdmin",
+                            style=ButtonStyle.SUCCESS,
                         ),
                     ]
                 ]
