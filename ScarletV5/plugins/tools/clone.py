@@ -374,6 +374,10 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         token = await client.get_managed_bot_token(bot.id)
 
         logging.info(f"Managed bot detected: @{bot.username}")
+        print("=" * 50)
+        print("MANAGED BOT UPDATE RECEIVED")
+        print(update)
+        print("=" * 50)
 
         ai = Client(
             f"clone_{bot.id}",
@@ -408,7 +412,7 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
 
         await ai.send_message(
             owner.id,
-            "✅ Your clone is ready."
+            "𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ ɪs ɢєᴛᴛɪηɢ sᴛᴧꝛᴛєᴅ sσση..\n𝐏‌ʟᴢ /start ɪᴛ ᴧɢᴧɪη ɪη ғєᴡ sєᴄσηᴅs 🙌"
         )
 
         logging.info(f"{bot.username} started.")
