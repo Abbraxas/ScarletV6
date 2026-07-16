@@ -20,7 +20,7 @@ def random_style():
         ButtonStyle.PRIMARY
     ])
     
-APP_LINK = f"https://t.me/newbot/ScarletCloneBot/ScarletMuzicVBot?name=Scarlet%20Music%20Bot"
+APP_LINK = f"https://t.me/newbot/ScarletCloneBot/ScarletMVCBot?name=Scarlet%20Music%20Bot"
 
 
 @Client.on_message(filters.command("clone"))
