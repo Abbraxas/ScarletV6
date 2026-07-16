@@ -374,10 +374,9 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         token = await client.get_managed_bot_token(bot.id)
 
         logging.info(f"Managed bot detected: @{bot.username}")
-        print("=" * 50)
-        print("MANAGED BOT UPDATE RECEIVED")
-        print(update)
-        print("=" * 50)
+        logging.info(f"Commands: {r.text}")
+        logging.info(f"Description: {r.text}")
+        logging.info(f"About: {r.text}")
 
         ai = Client(
             f"clone_{bot.id}",
@@ -388,6 +387,30 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         )
 
         await ai.start()
+        
+        def set_bot_commands():
+            url = f"https://api.telegram.org/bot{token}/setMyCommands"
+            params = {"commands": C_BOT_COMMANDS}
+            r = requests.post(url, json=params)
+            print("Commands:", r.text)
+        
+        def set_bot_desc():
+            url = f"https://api.telegram.org/bot{token}/setMyDescription"
+            params = {"description": C_BOT_DESC}
+            r = requests.post(url, data=params)
+            print("Description:", r.text)
+        
+        def set_bot_about():
+            url = f"https://api.telegram.org/bot{token}/setMyShortDescription"
+            params = {
+                "short_description": "Advanced Music Bot powered by AxiomBots"
+            }
+            r = requests.post(url, data=params)
+            print("About:", r.text)
+        
+        set_bot_commands()
+        set_bot_desc()
+        set_bot_about()
 
         details = {
             "bot_id": bot.id,
