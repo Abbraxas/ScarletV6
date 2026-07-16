@@ -1,3 +1,4 @@
+import os
 import re
 import logging
 import asyncio
@@ -30,6 +31,8 @@ from pyrogram.types import ManagedBotUpdated
 CLONES = set()
 
 C_BOT_DESC = "𝐖‌єʟᴄσϻє ᴛσ ʏσυꝛ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻυsɪᴄ 𝚺ᴄσsʏsᴛєϻ. \n\n𝐅‌ꝛσϻ sᴛꝛєᴧϻɪηɢ ᴧηᴅ ʙꝛσᴧᴅᴄᴧsᴛɪηɢ ᴛσ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻєᴅɪᴧ, єᴠєꝛʏ ғєᴧᴛυꝛє ɪs ʙυɪʟᴛ ᴛσ ʙє ʏσυꝛs.\n\n𝐍‌єєᴅ ʏσυꝛ σᴡη? 𝐂‌ʟσηє ɪᴛ ɪη ᴧ ғєᴡ sєᴄσηᴅs ➜ @ScarletCloneBot\n\n• 𝐔‌ᴘᴅᴧᴛєs ➜ @AxiomBots\n• 𝐂‌ꝛєᴧᴛσꝛ ➜ @CreativeAxiom"
+
+BOT_DP = "ScarletV5/assets/cloned_bot_dp.png"
 
 C_BOT_COMMANDS = [
                 {"command": "/start", "description": "| 𝐈‌ηɪᴛɪᴧᴛєs 𝐓‌ʜє 𝐌‌υsɪᴄ 𝐁‌σᴛ."},
@@ -419,6 +422,27 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         set_bot_desc()
         set_bot_about()
 
+        def set_bot_photo():
+            try:
+                if not os.path.exists(BOT_DP):
+                    logging.error(f"Bot DP not found: {BOT_DP}")
+                    return
+        
+                url = f"https://api.telegram.org/bot{token}/setUserProfilePhoto"
+        
+                with open(BOT_DP, "rb") as photo:
+                    r = requests.post(
+                        url,
+                        files={"photo": photo}
+                    )
+        
+                logging.info(f"Photo: {r.text}")
+        
+            except Exception as e:
+                logging.exception(e)
+        
+        set_bot_photo()
+
         details = {
             "bot_id": bot.id,
             "is_bot": True,
@@ -440,10 +464,13 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
 
         CLONES.add(bot.id)
 
-        await ai.send_message(
-            owner.id,
-            "𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ ɪs ɢєᴛᴛɪηɢ sᴛᴧꝛᴛєᴅ sσση..\n𝐏‌ʟᴢ /start ɪᴛ ᴧɢᴧɪη ɪη ғєᴡ sєᴄσηᴅs 🙌"
-        )
+        try:
+            await ai.send_message(
+                owner.id,
+                "𝐘‌συꝛ 𝐂‌ʟσηє 𝐁‌σᴛ ɪs ɢєᴛᴛɪηɢ sᴛᴧꝛᴛєᴅ sσση..\n𝐏‌ʟᴢ /start ɪᴛ ᴧɢᴧɪη ɪη ғєᴡ sєᴄσηᴅs 🙌"
+            )
+        except Exception:
+            pass
 
         logging.info(f"{bot.username} started.")
 
