@@ -372,7 +372,7 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
         owner = update.user
 
         token = await client.get_managed_bot_token(bot.id)
-
+        logging.info(token)
         logging.info(f"Managed bot detected: @{bot.username}")
 
         ai = Client(
