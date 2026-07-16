@@ -1,4 +1,4 @@
-from pyrogram.enums import ParseMode
+from pyrogram.enums import ParseMode, ButtonStyle
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from ScarletV5 import app
@@ -94,10 +94,10 @@ async def clone_main_logs(client, message, streamtype):
     logger_text = f"""
 <blockquote><b>@{bot_username} ᴘʟᴀʏ ʟᴏɢ</b></blockquote>
 
-<blockquote><b>ᴄʜᴧᴛ ιᴅ :</b> <code>{message.chat.id}</code>
+<blockquote expandable><b>ᴄʜᴧᴛ ιᴅ :</b> <code>{message.chat.id}</code>
 <b>ᴄʜᴧᴛ ηᴧϻє :</b> {message.chat.title}
 <b>ᴄʜᴧᴛ ᴜsєꝛηᴧϻє :</b> @{message.chat.username}
-<b>ᴄʜᴀᴛ ʟɪɴᴋ :</b> {chat_link}</blockquote>
+<b>ᴄʜᴀᴛ ʟɪɴᴋ :</b> {invite}</blockquote>
 
 <blockquote><b>ᴜsєꝛ ιᴅ :</b> <code>{message.from_user.id}</code>
 <b>ηᴧϻє :</b> {message.from_user.mention}
@@ -109,12 +109,12 @@ async def clone_main_logs(client, message, streamtype):
     buttons = []
     
     buttons.append(
-        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link)]
+        [InlineKeyboardButton("𝐈ɴɪᴛɪᴀᴛᴏʀ", url=user_link, style=ButtonStyle.SUCCESS)]
     )
     
     if invite:
         buttons[0].append(
-            InlineKeyboardButton("𝐖‌ʜєꝛє ?", url=invite)
+            InlineKeyboardButton("𝐖‌ʜєꝛє ?", url=invite, style=ButtonStyle.PRIMARY)
         )
     
     buttons = InlineKeyboardMarkup(buttons)
