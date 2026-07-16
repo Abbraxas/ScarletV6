@@ -25,7 +25,7 @@ def lanuages_keyboard(_):
                 InlineKeyboardButton(
                     text=languages_present[i],
                     callback_data=f"languages:{i}",
-                    style=random_style(),
+                    style=ButtonStyle.PRIMARY,
                 )
             )
             for i in languages_present
