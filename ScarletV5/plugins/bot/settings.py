@@ -39,6 +39,14 @@ from ScarletV5.utils.inline.start import private_panel
 import config
 from config import BANNED_USERS, OWNER_ID
 from strings import helpers # ⚠️ Make sure to import 'helpers' if CLONE_HELP is there
+from pyrogram.enums import ButtonStyle
+
+def random_style():
+    return random.choice([
+        ButtonStyle.SUCCESS,
+        ButtonStyle.DANGER,
+        ButtonStyle.PRIMARY
+    ])
 
 # ---------------------------------------------------
 # Existing Callbacks (Unchanged)
@@ -107,8 +115,8 @@ async def gib_repo(client, CallbackQuery, _):
         reply_markup=InlineKeyboardMarkup(
             [
                 # 📢 CHANGE HERE: user_id is replaced by callback_data
-                [InlineKeyboardButton(text="ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ʙᴏᴛ", callback_data="the_maanav_help")],
-                [InlineKeyboardButton(text="𝐁‌ᴧᴄᴋ ⟲", callback_data="Axiom_Back")]
+                [InlineKeyboardButton(text="ᴄʀᴇᴀᴛᴇ ᴏᴡɴ ʙᴏᴛ", callback_data="the_maanav_help", style=ButtonStyle.SUCCESS)],
+                [InlineKeyboardButton(text="𝐁‌ᴧᴄᴋ ⟲", callback_data="Axiom_Back", style=ButtonStyle.PRIMARY)]
             ]
         )
     )
@@ -131,7 +139,7 @@ async def the_maanav_help_callback(client, CallbackQuery, _):
             [
                 InlineKeyboardButton(
                     text="𝐁‌ᴧᴄᴋ ⟲", 
-                    callback_data="Axiom_Clone" # Clicking this will call gib_repo again
+                    callback_data="Axiom_Clone", style=random_style() # Clicking this will call gib_repo again
                 )
             ]
         ]
@@ -393,11 +401,12 @@ async def authusers_mar(client, CallbackQuery, _):
                 [
                     [
                         InlineKeyboardButton(
-                            text=_["BACK_BUTTON"], callback_data=f"AU"
+                            text=_["BACK_BUTTON"], callback_data=f"AU", style=random_style(),
                         ),
                         InlineKeyboardButton(
                             text=_["CLOSE_BUTTON"],
                             callback_data=f"close",
+                            style=ButtonStyle.DANGER,
                         ),
                     ]
                 ]
