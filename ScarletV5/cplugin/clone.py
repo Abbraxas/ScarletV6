@@ -12,7 +12,7 @@ from .utils import StartTime
 from ScarletV5.utils import get_readable_time
 from ScarletV5.utils.decorators.language import language
 
-APP_LINK = f"https://t.me/ScarletCloneBot"
+APP_LINK = f"https://t.me/newbot/ScarletCloneBot/ScarletMuzicVBot?name=Scarlet%20Music%20Bot"
 
 
 @Client.on_message(filters.command("clone"))
@@ -25,7 +25,7 @@ async def ping_clone(client: Client, message: Message, _):
         photo=random.choice(STREAMI_PICS), caption=_["NO_CLONE_MSG"],
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("ɢᴏ ᴀɴᴅ ᴄʟᴏɴᴇ", url=APP_LINK)]
+                [InlineKeyboardButton("𝐂‌ꝛєᴧᴛє ᴧ 𝐌‌υsɪᴄ 𝐁‌σᴛ 𝐍‌σᴡ", url=APP_LINK)]
             ]
         )
     )
