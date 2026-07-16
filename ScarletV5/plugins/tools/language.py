@@ -7,6 +7,14 @@ from ScarletV5.utils.database import get_lang, set_lang
 from ScarletV5.utils.decorators import ActualAdminCB, language, languageCB
 from config import BANNED_USERS
 from strings import get_string, languages_present
+from pyrogram.enums import ButtonStyle
+
+def random_style():
+    return random.choice([
+        ButtonStyle.SUCCESS,
+        ButtonStyle.DANGER,
+        ButtonStyle.PRIMARY
+    ])
 
 
 def lanuages_keyboard(_):
@@ -17,6 +25,7 @@ def lanuages_keyboard(_):
                 InlineKeyboardButton(
                     text=languages_present[i],
                     callback_data=f"languages:{i}",
+                    style=random_style(),
                 )
             )
             for i in languages_present
@@ -26,8 +35,9 @@ def lanuages_keyboard(_):
         InlineKeyboardButton(
             text=_["BACK_BUTTON"],
             callback_data=f"Axiom_Back",
+            style=ButtonStyle.PRIMARY,
         ),
-        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
+        InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close", style=ButtonStyle.DANGER),
     )
     return keyboard
 
