@@ -35,7 +35,6 @@ async def play_logs(message, streamtype):
     
     buttons = InlineKeyboardMarkup(buttons)
 
-        if message.chat.id != LOGGER_ID:
             try:
                 await app.send_message(
                     chat_id=LOGGER_ID,
