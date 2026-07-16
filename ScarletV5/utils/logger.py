@@ -35,17 +35,16 @@ async def play_logs(message, streamtype):
     
     buttons = InlineKeyboardMarkup(buttons)
 
-            try:
-                await app.send_message(
-                    chat_id=LOGGER_ID,
-                    text=logger_text,
-                    parse_mode=ParseMode.HTML,
-                    reply_markup=buttons,
-                    disable_web_page_preview=True,
-                )
-            except:
-                pass
-        return
+    try:
+        await app.send_message(
+            chat_id=LOGGER_ID,
+            text=logger_text,
+            parse_mode=ParseMode.HTML,
+            reply_markup=buttons,
+            disable_web_page_preview=True,
+        )
+    except Exception as e:
+        print(e)
 
 
 async def clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype):
