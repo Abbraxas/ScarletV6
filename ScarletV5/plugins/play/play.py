@@ -328,7 +328,7 @@ async def play_commnd(
                     err = _["general_2"].format(ex_type)
                     LOGGER(__name__).error(ex_type, exc_info=True)
                 return await mystic.edit_text(err)
-            return await play_logs(message, streamtype="M3u8 or Index Link")
+            return await play_logs(client, message, streamtype="M3u8 or Index Link")
     else:
         if len(message.command) < 2:
             buttons = botplaylist_markup(_)
@@ -389,7 +389,7 @@ async def play_commnd(
                 LOGGER(__name__).error(ex_type, exc_info=True)
             return await mystic.edit_text(err)
         await mystic.delete()
-        return await play_logs(message, streamtype=streamtype)
+        return await play_logs(client, message, streamtype=streamtype)
     else:
         if plist_type:
             ran_hash = "".join(
@@ -409,7 +409,7 @@ async def play_commnd(
                 text=cap,
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
-            return await play_logs(message, streamtype=f"Playlist : {plist_type}")
+            return await play_logs(client, message, streamtype=f"Playlist : {plist_type}")
         else:
             if slider:
                 buttons = slider_markup(
@@ -429,7 +429,7 @@ async def play_commnd(
                     ),
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
-                return await play_logs(message, streamtype=f"Searched on Youtube")
+                return await play_logs(client, message, streamtype=f"Searched on Youtube")
             else:
                 buttons = track_markup(
                     _,
@@ -443,7 +443,7 @@ async def play_commnd(
                     text=cap,
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
-                return await play_logs(message, streamtype=f"URL Searched Inline")
+                return await play_logs(client, message, streamtype=f"URL Searched Inline")
 
 
 @app.on_callback_query(filters.regex("MusicStream") & ~BANNED_USERS)
