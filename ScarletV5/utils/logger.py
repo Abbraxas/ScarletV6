@@ -6,7 +6,7 @@ from ScarletV5.utils.database import is_on_off
 from config import LOGGER_ID
 
 
-async def play_logs(message, streamtype):
+async def play_logs(client, message, streamtype):
     try:
         invite = await client.export_chat_invite_link(message.chat.id)
     except:
