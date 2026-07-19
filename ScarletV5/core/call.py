@@ -325,6 +325,7 @@ class Call(PyTgCalls):
                         title[:23],
                         check[0]["dur"],
                         user,
+                        message.from_user.id,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -372,6 +373,7 @@ class Call(PyTgCalls):
                         title[:23],
                         check[0]["dur"],
                         user,
+                        message.from_user.id,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
@@ -453,6 +455,7 @@ class Call(PyTgCalls):
                             title[:23],
                             check[0]["dur"],
                             user,
+                            message.from_user.id,
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
