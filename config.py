@@ -24,6 +24,7 @@ YT_API_KEY = getenv("YT_API_KEY" , 'ShrutiBotsxckVOidRaxdTu0C83Qgc')
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 
 LOGGER_ID = int(getenv("LOGGER_ID"))
+LOG_GROUP_ID = LOGGER_ID
 CLONE_LOGGER = LOGGER_ID
 
 OWNER_ID = int(getenv("OWNER_ID", 0))  # ✔️ default added
