@@ -462,6 +462,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     title[:23],
                     duration,
                     user,
+                    CallbackQuery.from_user.id,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -498,6 +499,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     title[:23],
                     duration,
                     user,
+                    CallbackQuery.from_user.id,
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
@@ -573,6 +575,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                         title[:23],
                         duration,
                         user,
+                        CallbackQuery.from_user.id,
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
