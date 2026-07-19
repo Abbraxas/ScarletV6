@@ -52,7 +52,7 @@ async def play_logs(client, message, streamtype):
             disable_web_page_preview=True,
         )
     except Exception as e:
-        print(e)
+        print(f"Log send failed: {e}")
 
 
 async def clone_bot_logs(client, message, bot_mention, clone_logger_id, streamtype):
@@ -146,4 +146,4 @@ async def clone_main_logs(client, message, streamtype):
             disable_web_page_preview=True,
         )
     except Exception as e:
-        print(e)
+        print(f"Log send failed: {e}")
