@@ -105,11 +105,11 @@ async def stream(
                     photo=img,
                     has_spoiler=True,
                     caption=_["stream_1"].format(
-                        title[:50],
-                        f"https://t.me/{app.username}?start=info_{vidid}",
-                        duration_min,
-                        user_name,
-                        user_id,
+                        f"https://t.me/{app.username}?start=info_{vidid}",   # ✅ Pehle URL ({0})
+                        title[:50],                                          # ✅ Phir Title ({1})
+                        duration_min,                                        # ✅ Duration ({2})
+                        user_name,                                           # ✅ User Name ({3})
+                        user_id,                                             # ✅ User ID ({4})
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
