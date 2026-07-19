@@ -190,19 +190,35 @@ class YouTubeAPI:
                 continue
             ids.append(vid)
         return ids
-
+        
     async def track(self, link: str, videoid: Union[bool, str] = None):
         if videoid:
             link = self.base + link
         if "&" in link:
             link = link.split("&")[0]
-        results = VideosSearch(link, limit=1)
-        for result in (await results.next())["result"]:
-            title = result["title"]
-            duration_min = result["duration"]
-            vidid = result["id"]
-            yturl = result["link"]
-            thumbnail = result["thumbnails"][0]["url"].split("?")[0]
+        
+        # Default values set kar di hain taaki error na aaye
+        title = "Unknown Title"
+        duration_min = "00:00"
+        vidid = "unknown"
+        yturl = link
+        thumbnail = ""
+        
+        try:
+            results = VideosSearch(link, limit=1)
+            search_results = (await results.next())["result"]
+            if search_results:
+                result = search_results[0]
+                title = result.get("title", "Unknown Title")
+                duration_min = result.get("duration", "00:00")
+                vidid = result.get("id", "unknown")
+                yturl = result.get("link", link)
+                thumbs = result.get("thumbnails", [])
+                if thumbs:
+                    thumbnail = thumbs[0]["url"].split("?")[0]
+        except Exception:
+            pass # Agar search fail ho, toh default values use hongi
+            
         track_details = {
             "title": title,
             "link": yturl,
