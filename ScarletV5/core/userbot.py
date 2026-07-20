@@ -23,8 +23,8 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("Axlomm")
-                await self.one.join_chat("AxiomBots")
+                await self.one.join_chat("ScarletSupportChat")
+                await self.one.join_chat("ScarletUpdates")
             except:
                 pass
             assistants.append(1)
