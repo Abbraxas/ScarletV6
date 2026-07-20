@@ -1000,6 +1000,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
+                disable_web_page_preview=True,
             )
         else:
             if not forceplay:
@@ -1063,6 +1064,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
+                disable_web_page_preview=True,
             )
         else:
             if not forceplay:
@@ -1115,6 +1117,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
+                disable_web_page_preview=True,
             )
         else:
             if not forceplay:
@@ -1168,6 +1171,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
+                disable_web_page_preview=True,
             )
         else:
             if not forceplay:
