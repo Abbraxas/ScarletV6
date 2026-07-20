@@ -77,6 +77,7 @@ wrong = {}
 @Client.on_callback_query(filters.regex("PanelMarkup") & ~BANNED_USERS)
 @languageCB
 async def markup_panel(client, CallbackQuery: CallbackQuery, _):
+    message = CallbackQuery.message
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -95,6 +96,7 @@ async def markup_panel(client, CallbackQuery: CallbackQuery, _):
 @Client.on_callback_query(filters.regex("MainMarkup") & ~BANNED_USERS)
 @languageCB
 async def del_back_playlists(client, CallbackQuery, _):
+    message = CallbackQuery.message
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -112,6 +114,7 @@ async def del_back_playlists(client, CallbackQuery, _):
 @Client.on_callback_query(filters.regex("MusicMarkup") & ~BANNED_USERS)
 @languageCB
 async def music_markup(client, CallbackQuery, _):
+    message = CallbackQuery.message
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
     callback_request = callback_data.split(None, 1)[1]
@@ -129,6 +132,7 @@ async def music_markup(client, CallbackQuery, _):
 @Client.on_callback_query(filters.regex("Pages") & ~BANNED_USERS)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
+    message = CallbackQuery.message
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
     chat_id = CallbackQuery.message.chat.id
@@ -195,6 +199,7 @@ upvoters = {}
 @Client.on_callback_query(filters.regex("ADMIN") & ~BANNED_USERS)
 @languageCB
 async def del_back_playlist(client, CallbackQuery, _):
+    message = CallbackQuery.message
 
     bot = await client.get_me()
 
