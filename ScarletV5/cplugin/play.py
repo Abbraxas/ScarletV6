@@ -998,7 +998,7 @@ async def stream(
             button = aq_markup(_, chat_id)
             await client.send_message(
                 chat_id=original_chat_id,
-                text=_["queue_4"].format(position, title[:18], duration_min, user_name),
+                text=_["queue_4"].format(position, title[:18], duration_min, user_name, user_id, message.from_user.id),
                 reply_markup=InlineKeyboardMarkup(button),
                 disable_web_page_preview=True,
             )
@@ -1062,7 +1062,7 @@ async def stream(
             button = aq_markup(_, chat_id)
             await client.send_message(
                 chat_id=original_chat_id,
-                text=_["queue_4"].format(position, title[:18], duration_min, user_name),
+                text=_["queue_4"].format(position, title[:18], duration_min, user_name, user_id, message.from_user.id),
                 reply_markup=InlineKeyboardMarkup(button),
                 disable_web_page_preview=True,
             )
@@ -1115,7 +1115,7 @@ async def stream(
             button = aq_markup(_, chat_id)
             await client.send_message(
                 chat_id=original_chat_id,
-                text=_["queue_4"].format(position, title[:18], duration_min, user_name),
+                text=_["queue_4"].format(position, title[:18], duration_min, user_name, user_id, message.from_user.id),
                 reply_markup=InlineKeyboardMarkup(button),
                 disable_web_page_preview=True,
             )
@@ -1169,7 +1169,7 @@ async def stream(
             button = aq_markup(_, chat_id)
             await client.send_message(
                 chat_id=original_chat_id,
-                text=_["queue_4"].format(position, title[:18], duration_min, user_name),
+                text=_["queue_4"].format(position, title[:18], duration_min, user_name, user_id, message.from_user.id),
                 reply_markup=InlineKeyboardMarkup(button),
                 disable_web_page_preview=True,
             )
@@ -1258,7 +1258,7 @@ async def stream(
             run = await client.send_photo(
                 original_chat_id,
                 photo=config.STREAM_IMG_URL,
-                caption=_["stream_2"].format(user_name),
+                caption=_["stream_2"].format(user_name, user_id, message.from_user.id),
                 reply_markup=InlineKeyboardMarkup(button),
             )
             db[chat_id][0]["mystic"] = run
