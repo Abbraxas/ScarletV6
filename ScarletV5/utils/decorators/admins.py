@@ -1,4 +1,4 @@
-from pyrogram.enums import ChatType
+from pyrogram.enums import ChatType, ButtonStyle
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from ScarletV5 import app
@@ -46,6 +46,7 @@ def AdminRightsCheck(mystic):
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
                             callback_data="AxiommousAdmin",
+                            style=ButtonStyle.PRIMARY,
                         ),
                     ]
                 ]
@@ -142,6 +143,7 @@ def AdminActual(mystic):
                         InlineKeyboardButton(
                             text="ʜᴏᴡ ᴛᴏ ғɪx ?",
                             callback_data="AxiommousAdmin",
+                            style=ButtonStyle.SUCCESS,
                         ),
                     ]
                 ]
