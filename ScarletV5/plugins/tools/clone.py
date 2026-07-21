@@ -30,7 +30,7 @@ from datetime import datetime
 from pyrogram.types import ManagedBotUpdated
 CLONES = set()
 
-C_BOT_DESC = "𝐖‌єʟᴄσϻє ᴛσ ʏσυꝛ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻυsɪᴄ 𝚺ᴄσsʏsᴛєϻ. \n\n𝐅‌ꝛσϻ sᴛꝛєᴧϻɪηɢ ᴧηᴅ ʙꝛσᴧᴅᴄᴧsᴛɪηɢ ᴛσ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻєᴅɪᴧ, єᴠєꝛʏ ғєᴧᴛυꝛє ɪs ʙυɪʟᴛ ᴛσ ʙє ʏσυꝛs.\n\n𝐍‌єєᴅ ʏσυꝛ σᴡη? 𝐂‌ʟσηє ɪᴛ ɪη ᴧ ғєᴡ sєᴄσηᴅs ➜ @ScarletCloneBot\n\n• 𝐔‌ᴘᴅᴧᴛєs ➜ @AxiomBots\n• 𝐂‌ꝛєᴧᴛσꝛ ➜ @CreativeAxiom"
+C_BOT_DESC = "𝐖‌єʟᴄσϻє ᴛσ ʏσυꝛ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻυsɪᴄ 𝚺ᴄσsʏsᴛєϻ. \n\n𝐅‌ꝛσϻ sᴛꝛєᴧϻɪηɢ ᴧηᴅ ʙꝛσᴧᴅᴄᴧsᴛɪηɢ ᴛσ ᴘєꝛsσηᴧʟɪᴢєᴅ ϻєᴅɪᴧ, єᴠєꝛʏ ғєᴧᴛυꝛє ɪs ʙυɪʟᴛ ᴛσ ʙє ʏσυꝛs.\n\n𝐍‌єєᴅ ʏσυꝛ σᴡη? 𝐂‌ʟσηє ɪᴛ ɪη ᴧ ғєᴡ sєᴄσηᴅs ➜ @ScarletCloneBot\n\n• 𝐔‌ᴘᴅᴧᴛєs ➜ @ScarletUpdates\n• 𝐂‌ꝛєᴧᴛσꝛ ➜ @CreativeAxiom"
 
 BOT_DP = "ScarletV5/assets/cloned_dp.jpg"
 
@@ -111,8 +111,8 @@ async def clone_txt(client, message, _):
                 "name": bot.first_name,
                 "token": bot_token,
                 "username": bot.username,
-                "channel": "AxiomBots",
-                "support": "Axlomm",
+                "channel": "ScarletUpdates",
+                "support": "ScarletSupportChat",
                 "premium" : False,
                 "Date" : False,
             }
@@ -412,7 +412,7 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
             url = f"https://api.telegram.org/bot{token}/setMyShortDescription"
         
             params = {
-                "short_description": "Advanced Music Bot with clone feature.\n\nUpdates :- @AxiomBots\nSponsored by :- @CreativeAxiom"
+                "short_description": "Advanced Music Bot with clone feature.\n\nUpdates :- @ScarletUpdates\nSponsored by :- @CreativeAxiom"
             }
         
             r = requests.post(url, data=params)
@@ -463,8 +463,8 @@ async def managed_clone(client: Client, update: ManagedBotUpdated):
             "name": bot.first_name,
             "token": token,
             "username": bot.username,
-            "channel": "AxiomBots",
-            "support": "Axlomm",
+            "channel": "ScarletUpdates",
+            "support": "ScarletSupportChat",
             "premium": False,
             "Date": False,
         }
