@@ -39,6 +39,11 @@ async def skip(cli, message: Message, _, chat_id):
                                 return await message.reply_text(_["admin_12"])
                             if popped:
                                 await auto_clean(popped)
+                            if popped and popped.get("mystic"):
+                                try:
+                                    await popped["mystic"].delete()
+                                except:
+                                    pass
                             if not check:
                                 try:
                                     await message.reply_text(
@@ -67,6 +72,11 @@ async def skip(cli, message: Message, _, chat_id):
             popped = check.pop(0)
             if popped:
                 await auto_clean(popped)
+            if popped and popped.get("mystic"):
+                try:
+                    await popped["mystic"].delete()
+                except:
+                    pass
             if not check:
                 await message.reply_text(
                     text=_["admin_6"].format(
