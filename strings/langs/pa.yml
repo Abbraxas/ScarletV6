@@ -339,7 +339,7 @@ song_11 : "<blockquote><b>ਅੱਪਲੋਡਿੰਗ ਸ਼ੁਰੂ ਹੋ ਗ
 
 # New Clone !
 
-BOT_DESC : "<blockquote><b>ਕੀ ਤੁਸੀਂ ਅਜਿਹਾ ਹੀ ਬੋਟ ਚਾਹੁੰਦੇ ਹੋ? ਇਸਨੂੰ ਹੁਣੇ ਕਲੋਨ ਕਰੋ! ✅</b>\n\nਸ਼ੁਰੂ ਕਰਨ ਲਈ : @ScarletCloneBot 'ਤੇ ਜਾਓ!\n\n - ਅੱਪਡੇਟ : @AxiomBots\n - ਮਾਲਕ : @CreativeAxiom</blockquote>"
+BOT_DESC : "<blockquote><b>ਕੀ ਤੁਸੀਂ ਅਜਿਹਾ ਹੀ ਬੋਟ ਚਾਹੁੰਦੇ ਹੋ? ਇਸਨੂੰ ਹੁਣੇ ਕਲੋਨ ਕਰੋ! ✅</b>\n\nਸ਼ੁਰੂ ਕਰਨ ਲਈ : @cuqebot 'ਤੇ ਜਾਓ!\n\n - ਅੱਪਡੇਟ : @AxiomBots\n - ਮਾਲਕ : @CreativeAxiom</blockquote>"
 
 C_B_1 : "ਕਲੋਨ ਫੀਚਰ"
 C_B_2 : "ਮਾਲਕ"
@@ -386,4 +386,4 @@ C_P_I_5 : "<blockquote><b>ਸਹਾਇਤਾ ਚੈਟ ਅੱਪਡੇਟ ਕਰ
 C_P_I_6 : "<blockquote><b>ਸਹਾਇਤਾ ਚੈਨਲ ਅੱਪਡੇਟ ਕਰਨ ਵਿੱਚ ਅਸਫਲ।</b></blockquote>"
 
 #clone msg from cloned bot
-NO_CLONE_MSG : "<blockquote><b>ਆਪਣਾ ਖੁਦ ਦਾ ਬੋਟ ਕਲੋਨ ਬਣਾਉਣ ਲਈ, ਅਸਲ ਬੋਟ @ScarletCloneBot ਦੀ ਵਰਤੋਂ ਕਰੋ। ਬਸ ਉੱਥੇ ਜਾਓ ਅਤੇ ਕਲੋਨਿੰਗ ਸ਼ੁਰੂ ਕਰੋ!</b></blockquote>"
+NO_CLONE_MSG : "<blockquote><b>ਆਪਣਾ ਖੁਦ ਦਾ ਬੋਟ ਕਲੋਨ ਬਣਾਉਣ ਲਈ, ਅਸਲ ਬੋਟ @cuqebot ਦੀ ਵਰਤੋਂ ਕਰੋ। ਬਸ ਉੱਥੇ ਜਾਓ ਅਤੇ ਕਲੋਨਿੰਗ ਸ਼ੁਰੂ ਕਰੋ!</b></blockquote>"
