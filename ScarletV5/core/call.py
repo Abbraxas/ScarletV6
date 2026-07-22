@@ -170,7 +170,12 @@ class Call(PyTgCalls):
         assistant = await group_assistant(self, chat_id)
         try:
             check = db.get(chat_id)
-            check.pop(0)
+            popped = check.pop(0)
+            if popped and popped.get("mystic"):
+                try:
+                    await popped["mystic"].delete()
+                except:
+                    pass
         except:
             pass
         await remove_active_video_chat(chat_id)
@@ -484,8 +489,3 @@ class Call(PyTgCalls):
         async def stream_update_handler(client: PyTgCalls, update: Update):
             if isinstance(update, ChatUpdate):
                 await self.stop_stream(update.chat_id)
-            elif isinstance(update, StreamEnded):
-                await self.change_stream(client, update.chat_id)
-
-
-Axiom = Call()
