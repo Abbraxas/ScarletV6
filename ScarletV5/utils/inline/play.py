@@ -94,6 +94,13 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+                style=bar_style,
+            )
+        ],
+        [
             
             InlineKeyboardButton(text="ᴘᴧυsє", callback_data=f"ADMIN Pause|{chat_id}", style=random_style()),
             InlineKeyboardButton(text="sᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}", style=random_style()),
