@@ -489,3 +489,5 @@ class Call(PyTgCalls):
         async def stream_update_handler(client: PyTgCalls, update: Update):
             if isinstance(update, ChatUpdate):
                 await self.stop_stream(update.chat_id)
+
+Axiom = Call()
