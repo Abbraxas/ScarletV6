@@ -272,6 +272,12 @@ class Call(PyTgCalls):
                 loop = loop - 1
                 await set_loop(chat_id, loop)
             await auto_clean(popped)
+            # Delete the old song's playcard before playing the next one
+            if popped and popped.get("mystic"):
+                try:
+                    await popped["mystic"].delete()
+                except:
+                    pass
             if not check:
                 await _clear_(chat_id)
                 return await client.leave_call(chat_id)
