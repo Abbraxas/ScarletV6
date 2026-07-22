@@ -165,7 +165,7 @@ CLONE_HELP = """
 CLONE_HELP_2 = """
 <b><u>⊚ 𝐂‌ʟσηє 𝐂‌σηᴛꝛσʟ 𝐒‌υɪᴛє :</u></b>
 
-<blockquote><b>/clone</b> : 𝐅‌σꝛɢє ʏσυꝛ σᴡη 𝛅ᴄᴧꝛʟєᴛ ᴄʟσηє ɪη ϻσϻєηᴛs ᴠɪᴧ <a href="https://t.me/ScarletCloneBot">𝛅ᴄᴧꝛʟєᴛ 𝐂‌ʟσηєꝛ ㋡</a>
+<blockquote><b>/clone</b> : 𝐅‌σꝛɢє ʏσυꝛ σᴡη 𝛅ᴄᴧꝛʟєᴛ ᴄʟσηє ɪη ϻσϻєηᴛs ᴠɪᴧ <a href="https://t.me/cuqebot">𝛅ᴄᴧꝛʟєᴛ 𝐂‌ʟσηєꝛ ㋡</a>
 <b>/botinfo</b> : 𝐕‌ɪєᴡ ᴛʜє ᴄσϻᴘʟєᴛє ɪᴅєηᴛɪᴛʏ ᴧηᴅ sᴛᴧᴛυs σғ ʏσυꝛ ᴄʟσηє.
 <b>/setchannel</b> : 𝐋‌ɪηᴋ ʏσυꝛ σғғɪᴄɪᴧʟ υᴘᴅᴧᴛє ᴄʜᴧηηєʟ.
 <b>/setsupport</b> : 𝐂‌σηηєᴄᴛ ʏσυꝛ ᴄσϻϻυηɪᴛʏ ʜєʟᴘ ʜυʙ.
