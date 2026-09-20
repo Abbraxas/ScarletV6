@@ -256,6 +256,11 @@ class Call(PyTgCalls):
             raise AssistantErr(_["call_9"])
         except TelegramServerError:
             raise AssistantErr(_["call_10"])
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            LOGGER(__name__).error(f"VC Join Error: {e}")
+            raise AssistantErr(f"VC Join Error: {e}")
         await add_active_chat(chat_id)
         await music_on(chat_id)
         if video:
