@@ -11,12 +11,21 @@ FONT_TITLE = os.path.join(ASSETS, "f.ttf")
 FONT_NORMAL = os.path.join(ASSETS, "cfont.ttf")
 TEMPLATE_PATH = os.path.join(ASSETS, "ScarletThumbnailTemplate.png")
 
-@lru_cache(maxsize=4)
+@lru_cache(maxsize=32)
 def _get_font(path: str, size: int):
+    font_path = os.path.abspath(path)
+
+    if not os.path.isfile(font_path):
+        raise FileNotFoundError(f"Thumbnail font not found: {font_path}")
+
     try:
-        return ImageFont.truetype(path, size)
-    except:
-        return ImageFont.load_default()
+        font = ImageFont.truetype(font_path, size=size)
+        print(f"[THUMB FONT OK] {os.path.basename(font_path)} size={size}")
+        return font
+    except Exception as e:
+        raise RuntimeError(
+            f"Failed to load thumbnail font {font_path}: {e}"
+        ) from e
 
 def _create_rounded_image(img, radius):
     mask = Image.new("L", img.size, 0)

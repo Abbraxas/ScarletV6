@@ -1000,7 +1000,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name, f"https://t.me/{a.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -1064,7 +1064,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name, C_SUPPORT_CHAT, user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -1117,7 +1117,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name, f"https://t.me/{a.username}?start=info_{streamtype}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -1171,7 +1171,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:18], duration_min, user_name, f"https://t.me/{a.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:

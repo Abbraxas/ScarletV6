@@ -167,7 +167,7 @@ async def welcome(client, message: Message):
                             f"https://t.me/{app.username}?start=sudolist",
                             config.SUPPORT_CHAT,
                         ),
-                        disable_web_page_preview=True,
+                        link_preview=False,
                     )
                     return await app.leave_chat(message.chat.id)
 

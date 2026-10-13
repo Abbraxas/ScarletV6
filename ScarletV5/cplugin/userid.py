@@ -50,6 +50,6 @@ async def getid(client, message):
 
     await message.reply_text(
         text,
-        disable_web_page_preview=True,
+        link_preview=False,
         parse_mode=ParseMode.DEFAULT,
     )

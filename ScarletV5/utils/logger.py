@@ -49,7 +49,7 @@ async def play_logs(client, message, streamtype):
             text=logger_text,
             parse_mode=ParseMode.HTML,
             reply_markup=buttons,
-            disable_web_page_preview=True,
+            link_preview=False,
         )
     except Exception as e:
         print(f"Log send failed: {e}")
@@ -81,7 +81,7 @@ async def clone_bot_logs(client, message, bot_mention, clone_logger_id, streamty
                 chat_id=int(clone_logger_id),
                 text=logger_text,
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         except Exception as e:
             print(f"[ERROR] Clone Bot Log Failed ({bot_mention}): {e}")
@@ -143,7 +143,7 @@ async def clone_main_logs(client, message, streamtype):
             text=logger_text,
             parse_mode=ParseMode.HTML,
             reply_markup=buttons,
-            disable_web_page_preview=True,
+            link_preview=False,
         )
     except Exception as e:
         print(f"Log send failed: {e}")

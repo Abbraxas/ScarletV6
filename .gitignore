@@ -1,0 +1,25 @@
+
+# Python virtual environments
+venv/
+.venv/
+
+# Runtime and sensitive files
+venv/
+__pycache__/
+*.py[cod]
+*.session
+*.session-journal
+cache/
+downloads/
+log.txt
+ScarletV5_backup_*/
+
+venv/
+__pycache__/
+*.py[cod]
+*.session
+*.session-journal
+cache/
+downloads/
+log.txt
+ScarletV5_backup_*/

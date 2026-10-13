@@ -169,7 +169,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:50], duration_min, user_name, f"https://t.me/{app.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -232,7 +232,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:50], duration_min, user_name, f"https://t.me/{app.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -286,7 +286,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:50], duration_min, user_name, f"https://t.me/{app.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -341,7 +341,7 @@ async def stream(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:50], duration_min, user_name, f"https://t.me/{app.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:
@@ -405,7 +405,7 @@ async def stream(
             await mystic.edit_text(
                 text=_["queue_4"].format(position, title[:50], duration_min, user_name, f"https://t.me/{app.username}?start=info_{vidid}", user_id),
                 reply_markup=InlineKeyboardMarkup(button),
-                disable_web_page_preview=True,
+                link_preview=False,
             )
         else:
             if not forceplay:

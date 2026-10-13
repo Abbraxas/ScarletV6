@@ -27,7 +27,7 @@ class TeleAPI:
         for x in out:
             if j <= 2:
                 j += 1
-                await message.reply_text(x, disable_web_page_preview=True)
+                await message.reply_text(x, link_preview=False)
         return True
 
     async def get_link(self, message):

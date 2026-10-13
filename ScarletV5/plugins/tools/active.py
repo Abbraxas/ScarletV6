@@ -40,7 +40,7 @@ async def activevc(_, message: Message):
     else:
         await mystic.edit_text(
             f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs :</b>\n\n{text}",
-            disable_web_page_preview=True,
+            link_preview=False,
         )
 
 
@@ -72,7 +72,7 @@ async def activevi_(_, message: Message):
     else:
         await mystic.edit_text(
             f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs :</b>\n\n{text}",
-            disable_web_page_preview=True,
+            link_preview=False,
         )
 
 @app.on_message(filters.command(["ac","av"]) & SUDOERS)

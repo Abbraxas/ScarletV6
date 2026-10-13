@@ -275,7 +275,7 @@ async def del_back_playlist(client, CallbackQuery, _):
             await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
         elif "vid_" in queued:
             mystic = await CallbackQuery.message.reply_text(
-                _["call_7"], disable_web_page_preview=True
+                _["call_7"], link_preview=False
             )
             try:
                 file_path, direct = await YouTube.download(

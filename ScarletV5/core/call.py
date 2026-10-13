@@ -366,7 +366,7 @@ class Call(PyTgCalls):
                         )
                     except:
                         return await mystic.edit_text(
-                            _["call_6"], disable_web_page_preview=True
+                            _["call_6"], link_preview=False
                         )
                 if video:
                     stream = MediaStream(file_path, AudioQuality.HIGH, VideoQuality.SD_480p)
