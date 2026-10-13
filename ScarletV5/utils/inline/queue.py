@@ -123,7 +123,7 @@ def queuemarkup(_, vidid, chat_id):
         [
             InlineKeyboardButton(
                 text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/ScarletSupportChat",
+                url="https://t.me/ScarletCloner",
                 style=random_style(),
             ),
         ],

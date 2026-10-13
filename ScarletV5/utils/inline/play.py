@@ -92,7 +92,7 @@ def stream_markup_timer(_, chat_id, played, dur):
         [
             InlineKeyboardButton(text="ᴧᴅᴅ ϻєєʜ", url=f"https://t.me/{app.username}?startgroup=true", style=bar_style),
             InlineKeyboardButton(text="ᴄʟσsє", callback_data="close", style=ButtonStyle.DANGER),
-            InlineKeyboardButton(text="ηєᴡʙσᴛ", url=f"https://t.me/newbot/cuqebot", style=random_style()),
+            InlineKeyboardButton(text="ηєᴡʙσᴛ", url=f"https://t.me/newbot/vcscclonebot", style=random_style()),
         ]
     ]
     return buttons

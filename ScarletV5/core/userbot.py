@@ -23,8 +23,8 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("ScarletSupportChat")
-                await self.one.join_chat("ScarletUpdates")
+                await self.one.join_chat("ScarletCloner")
+                await self.one.join_chat("ScarletClone")
             except:
                 pass
             assistants.append(1)
